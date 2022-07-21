@@ -176,7 +176,7 @@ export default {
 }
 @media only screen and (max-width: 1200px) {
   #Name {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .nes-badge.is-icon {
     width: 15.25em;
