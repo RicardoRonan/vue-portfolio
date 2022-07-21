@@ -116,7 +116,7 @@ h2#sub-title {
     right: 12.5%;
   }
   #card {
-    bottom: 2rem;
+    bottom: -1rem;
     height: 5rem;
     width: 21rem;
     border: none;

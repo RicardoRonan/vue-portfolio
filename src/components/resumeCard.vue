@@ -13,7 +13,7 @@
       </div>
       <div class="col-md-6 p-5">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 p-3">
             <div class="card">
               <i class="nes-icon is-large star"></i>
               <h3 class="text-muted fs-5 text-center">Info</h3>
@@ -26,24 +26,24 @@
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6 p-3">
             <div class="card">
               <i class="nes-icon trophy is-large"></i>
+              <h3 class="text-muted fs-3 text-center">Matric</h3>
+              <p class="fs-5 text-center">2017-2021</p>
+              <p class="text-muted">Matriculated at AZ Berman Highschool.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 p-3">
+            <div class="card">
+              <i class="nes-icon coin is-large"></i>
               <h3 class="text-muted fs-3 text-center">Life-Choices</h3>
               <p class="fs-5 text-center">2022-Present</p>
               <p class="text-muted text-center">
                 Currently studying Web Development at Life Choices Academy.
               </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <i class="nes-icon coin is-large"></i>
-              <h3 class="text-muted fs-3 text-center">Matric</h3>
-              <p class="fs-5 text-center">2017-2021</p>
-              <p class="text-muted">Matriculated at AZ Berman Highschool.</p>
             </div>
           </div>
           <div class="col-md-6">

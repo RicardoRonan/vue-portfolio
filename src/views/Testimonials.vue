@@ -65,20 +65,20 @@ export default {
         },
         {
           id: 2,
-          name: "Natheerah Abrahams",
-          pixelImg: "https://i.postimg.cc/bw0SK1wc/1658338391828.png",
-          img: "https://i.postimg.cc/FFkPYbgX/Natheerah-3-1.jpg",
-          testimonial:
-            "Ricardo Moses has a winning attitude and is always willin  g to learns new things. He is always willing to extend a helping hand to assist others.",
-          role: "Colleague",
-        },
-        {
-          id: 3,
           name: "Ashton Abrahams",
           pixelImg: "https://i.postimg.cc/T1gtLGbW/1658339507305-1.png",
           img: "https://i.postimg.cc/yd8rWw6V/Ashton-4.jpg",
           testimonial:
             "Ricardo is a dedicated individual who never stops improving, he is a team player and a valuable asset to any team",
+          role: "Colleague",
+        },
+        {
+          id: 3,
+          name: "Natheerah Abrahams",
+          pixelImg: "https://i.postimg.cc/bw0SK1wc/1658338391828.png",
+          img: "https://i.postimg.cc/FFkPYbgX/Natheerah-3-1.jpg",
+          testimonial:
+            "Ricardo Moses has a winning attitude and is always willin  g to learns new things. He is always willing to extend a helping hand to assist others.",
           role: "Colleague",
         },
         {
