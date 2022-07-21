@@ -123,7 +123,7 @@ export default {
           pixelImg: "https://i.postimg.cc/KvGswDNB/1658344828431.png",
           img: "https://i.postimg.cc/nh4XLLLt/IMG-20220720-211835.jpg",
           testimonial:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veritatis sint quis iure ad magni nostrum ducimus aperiam consequatur officiis!",
+            "Ricardo is a person that improves the environment around him with his positivity and pure presence. His ability in both styling his application and the functionality is astronomically good and in my opinion, is one of the best when comes to mobile responsiveness. With all of this in mind, I truly believe he is an excellent candidate for a software development role.",
           role: "Colleague",
         },
       ],
