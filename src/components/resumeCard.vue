@@ -74,6 +74,7 @@ export default {};
 }
 #mush-img {
   padding-left: 1rem;
+  filter: drop-shadow(4px 4px 6px black);
 }
 #resume-cont {
   min-height: 80vh;

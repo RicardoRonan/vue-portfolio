@@ -115,7 +115,7 @@ export default {
           img: "https://i.postimg.cc/HnMpPScC/IMG-20220720-WA0026.jpg",
           testimonial:
             "Ricardo thrives in creative environments & works well with others. He would be a great asset to any team.",
-          role: "Admin Clerk",
+          role: "Junior Developer",
         },
         {
           id: 8,
@@ -137,7 +137,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 #real-img {
   height: 20rem;
 }
