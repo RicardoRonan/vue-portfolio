@@ -7,12 +7,12 @@
         <div id="img-cont">
           <img id="project-img" class="img-fluid" v-bind:src="project.img" />
           <div class="row">
-            <div class="col-md-6" id="icon-cont">
+            <div class="col-md-6 p-4" id="icon-cont">
               <a v-bind:href="project.liveLink" target="_blank"
                 ><i class="fa-solid fa-link" id="live-link"></i
               ></a>
             </div>
-            <div class="col-md-6" id="icon-cont-1">
+            <div class="col-md-6 p-4" id="icon-cont-1">
               <a v-bind:href="project.githubLink" target="_blank">
                 <i class="fa-brands fa-github" id="github-link"></i
               ></a>
@@ -85,17 +85,18 @@ export default {
 <style>
 #icon-cont {
   display: flex;
+  justify-content: flex-end;
 }
 #icon-cont-1 {
   display: flex;
 }
 
 #github-link {
-  color: black;
+  color: white;
   font-size: 3rem;
 }
 #live-link {
-  color: black;
+  color: #fefefe;
   font-size: 3rem;
 }
 #project-img {
