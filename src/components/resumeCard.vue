@@ -70,7 +70,7 @@ export default {};
   display: flex;
   align-content: center;
   justify-content: center;
-  filter: drop-shadow(2px 2px 2px black);
+  filter: drop-shadow(2px 2px 3px black);
 }
 #mush-img {
   padding-left: 1rem;
