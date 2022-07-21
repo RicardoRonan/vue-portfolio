@@ -23,7 +23,6 @@
               <h2 id="Name" class="is-primary">{{ testimonial.name }}</h2>
             </div>
           </div>
-          <!-- <h2>{{ testimonial.name }}</h2> -->
           <p>{{ testimonial.testimonial }}</p>
           <p>{{ testimonial.role }}</p>
         </div>
@@ -115,7 +114,7 @@ export default {
           pixelImg: "https://i.postimg.cc/m2nhJ8s5/1658343772237.png",
           img: "https://i.postimg.cc/HnMpPScC/IMG-20220720-WA0026.jpg",
           testimonial:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veritatis sint quis iure ad magni nostrum ducimus aperiam consequatur officiis!",
+            "Ricardo thrives in creative environments & works well with others. He would be a great asset to any team.",
           role: "Admin Clerk",
         },
         {
