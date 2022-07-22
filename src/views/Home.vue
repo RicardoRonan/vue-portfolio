@@ -1,8 +1,8 @@
 <template>
   <Landing />
-  <div id="loading">
-    <div id="loading-bar-cont">
-      <div id="card" class="card m-3"><div id="bar"></div></div>
+  <div id="loading-bar-cont">
+    <div id="card" class="card m-2">
+      <div id="bar"></div>
     </div>
   </div>
 </template>
@@ -24,6 +24,11 @@ export default {
 }
 #loading {
   min-height: 5vh;
+  width: 90%;
+  display: contents;
+}
+.container {
+  width: 100%;
 }
 
 #me {
@@ -37,6 +42,7 @@ export default {
 div#me-cont {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 @keyframes floating {
@@ -67,10 +73,10 @@ div#me-cont {
 
 #card {
   height: 5rem;
-  width: 90rem;
+  width: 90%;
   border: none;
-  position: absolute;
-  right: 1.5%;
+  /* position: absolute;
+  right: 1.5%; */
   border: 1rem ridge;
   bottom: 5rem;
 }
@@ -112,7 +118,7 @@ h2#sub-title {
     position: absolute;
     right: 12.5%;
   }
-  #card {
+  /* #card {
     bottom: -1rem;
     height: 5rem;
     width: 21rem;
@@ -120,20 +126,6 @@ h2#sub-title {
     position: absolute;
     right: 1.5%;
     border: 1rem ridge;
-  }
+  } */
 }
-
-/* @media only screen and (max-width: 1300px) {
-  #home {
-    min-height: 120vh;
-  }
-  #card {
-    height: 5rem;
-    width: 43rem;
-    border: none;
-    position: absolute;
-    right: 1.5%;
-    border: 1rem ridge;
-  }
-} */
 </style>

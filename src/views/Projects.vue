@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="m-4 p-3">
+  <section id="projects" class="m-2 p-3">
     <h1 id="project-title-1">Here are some of my Projects</h1>
     <div class="p-3 m-4 nes-container is-dark with-title">
       <div class="row">
