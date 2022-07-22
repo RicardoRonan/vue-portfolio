@@ -11,7 +11,7 @@
                 <input
                   type="text"
                   id="dark_field"
-                  class="nes-input"
+                  class="nes-input m-1"
                   placeholder="Firstname"
                   required
                   name="Firstname"
@@ -22,7 +22,7 @@
                 <input
                   type="text"
                   id="dark_field"
-                  class="nes-input"
+                  class="nes-input m-1"
                   placeholder="Surname"
                   required
                   name="Surname"
@@ -34,7 +34,7 @@
               <input
                 type="email"
                 id="name_field"
-                class="nes-input"
+                class="nes-input m-1"
                 placeholder="Your Email"
                 required
                 name="Email"
@@ -44,7 +44,7 @@
             <label for="textarea_field"></label>
             <textarea
               id="textarea_field"
-              class="nes-textarea"
+              class="nes-textarea m-1"
               placeholder="Your Message"
               required
               name="Message"
@@ -77,7 +77,7 @@
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
 .nes-text {
   color: rgba(91, 88, 88, 0.649);
 }
@@ -121,7 +121,32 @@ img#princess {
   min-height: 100vh;
   background-color: black;
 }
+.nes-balloon {
+  border-image-repeat: inherit;
+}
+.nes-input,
+.nes-textarea {
+  border-image-repeat: inherit;
+}
 
+@media only screen and (max-width: 770px) {
+  #contact-title {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+  #contact-cont {
+    height: 50rem;
+  }
+
+  div#peach {
+    padding-top: 9.9rem;
+  }
+}
+@media only screen and (max-width: 730px) {
+  div#peach {
+    padding-top: 6.29rem;
+  }
+}
 @media only screen and (max-width: 616px) {
   #contact-title {
     font-size: 3rem;
@@ -132,7 +157,7 @@ img#princess {
   }
 
   div#peach {
-    padding-top: 10.5rem;
+    padding-top: 10.9rem;
   }
 }
 </style>

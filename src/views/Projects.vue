@@ -4,7 +4,7 @@
     <div class="p-3 m-4 nes-container is-dark with-title">
       <div class="row">
         <div v-for="project in projects" :key="project.id" class="col-md-4">
-          <div class="card bg-dark p-3 m-4 corner-button">
+          <div class="card bg-dark p-3 m-4 corners">
             <h3 id="project-title">{{ project.title }}</h3>
             <div id="img-cont">
               <img
@@ -91,47 +91,47 @@ export default {
 };
 </script>
 <style>
-.corner-button {
+.corners {
   font-family: pixel;
   letter-spacing: 0.02rem;
-  cursor: pointer;
   background: transparent;
   border: 0.5rem solid currentColor;
   padding: 1.5rem 2rem;
   font-size: 2.2rem;
-  color: #fefefe;
+  color: #ffffff;
   position: relative;
   transition: color 0.3s;
   z-index: 1;
+  border-radius: 0rem;
 }
-.corner-button:hover {
+.corners:hover {
   color: crimson;
 }
-.corner-button:hover::before {
+.corners:hover::before {
   width: 0;
 }
-.corner-button:hover::after {
+.corners:hover::after {
   height: 0;
 }
-.corner-button:active {
+.corners:active {
   border-width: 0.25rem;
 }
-.corner-button::before,
-.corner-button::after {
+.corners::before,
+.corners::after {
   content: "";
   position: absolute;
-  background: #2f2f2f;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
   z-index: -1;
   transition: all 0.3s;
 }
-.corner-button::before {
+.corners::before {
   width: calc(100% - 3rem);
   height: calc(101% + 1rem);
   top: -0.5rem;
   left: 50%;
   transform: translateX(-50%);
 }
-.corner-button::after {
+.corners::after {
   height: calc(100% - 3rem);
   width: calc(101% + 1rem);
   left: -0.5rem;

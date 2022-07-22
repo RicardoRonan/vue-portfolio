@@ -12,7 +12,6 @@
                 class="img-fluid"
                 v-bind:src="testimonial.pixelImg"
                 @click="showModal(testimonial.id)"
-                data-bs-target="#staticBackdrop"
               />
             </div>
           </div>
@@ -31,7 +30,6 @@
         <section id="modal">
           <dialog
             class="nes-dialog is-dark is-rounded"
-            data-bs-backdrop="static"
             :id="'dialog-dark-rounded' + testimonial.id"
           >
             <form method="dialog">
