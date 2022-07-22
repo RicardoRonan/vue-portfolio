@@ -139,7 +139,7 @@ export default {
 </script>
 <style scoped>
 .nes-dialog {
-  animation: slideIn 3s linear alternate;
+  animation: slideIn 4s linear alternate;
 }
 @keyframes slideIn {
   0% {

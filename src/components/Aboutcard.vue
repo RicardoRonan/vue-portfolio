@@ -11,7 +11,7 @@
           />
         </div>
         <div class="col-md-6 p-5 text-black shadow">
-          <p class="About-text text-light">
+          <p class="about-text text-light">
             I am an open-minded, artistic young man. I am friendly, extroverted
             and I am very adventurous when given the chance. I am always ready
             to help and I can work in a team easily. I found a passion for
@@ -52,6 +52,10 @@ export default {};
 @media only screen and (max-width: 600px) {
   #about-title {
     font-size: 1.8rem;
+    word-break: keep-all;
+  }
+  .about-text {
+    font-size: 0.8rem;
     word-break: keep-all;
   }
 }
