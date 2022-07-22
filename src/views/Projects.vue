@@ -188,5 +188,8 @@ export default {
     color: #fefefe;
     font-size: 1rem;
   }
+  #project-title {
+    font-size: 0.7rem;
+  }
 }
 </style>
