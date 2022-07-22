@@ -5,14 +5,11 @@
       <div id="card" class="card m-3"><div id="bar"></div></div>
     </div>
   </div>
-  <Footer />
 </template>
 <script>
-import Footer from "../components/Footer.vue";
 import Landing from "../components/Landing.vue";
 export default {
   components: {
-    Footer,
     Landing,
   },
   // data() {

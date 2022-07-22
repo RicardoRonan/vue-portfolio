@@ -1,25 +1,33 @@
 <template>
   <section id="projects" class="m-4 p-3">
-    <h1 id="project-title">Here are some of my Projects</h1>
-    <div v-for="project in projects" :key="project.id">
-      <div class="p-3 m-4 nes-container is-dark with-title">
-        <h3>{{ project.title }}</h3>
-        <div id="img-cont">
-          <img id="project-img" class="img-fluid" v-bind:src="project.img" />
-          <div class="row">
-            <div class="col-md-6 p-4" id="icon-cont">
-              <a v-bind:href="project.liveLink" target="_blank"
-                ><i class="fa-solid fa-link" id="live-link"></i
-              ></a>
+    <h1 id="project-title-1">Here are some of my Projects</h1>
+    <div class="p-3 m-4 nes-container is-dark with-title">
+      <div class="row">
+        <div v-for="project in projects" :key="project.id" class="col-md-4">
+          <div class="card bg-dark p-3 m-4 corner-button">
+            <h3 id="project-title">{{ project.title }}</h3>
+            <div id="img-cont">
+              <img
+                id="project-img"
+                class="img-fluid"
+                v-bind:src="project.img"
+              />
+              <div class="row">
+                <div class="col-6 p-4" id="icon-cont">
+                  <a v-bind:href="project.liveLink" target="_blank"
+                    ><i class="fa-solid fa-link" id="live-link"></i
+                  ></a>
+                </div>
+                <div class="col-6 p-4" id="icon-cont-1">
+                  <a v-bind:href="project.githubLink" target="_blank">
+                    <i class="fa-brands fa-github" id="github-link"></i
+                  ></a>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6 p-4" id="icon-cont-1">
-              <a v-bind:href="project.githubLink" target="_blank">
-                <i class="fa-brands fa-github" id="github-link"></i
-              ></a>
-            </div>
+            <p id="project-language" class="p-2">{{ project.language }}</p>
           </div>
         </div>
-        <p class="p-2">{{ project.language }}</p>
       </div>
     </div>
   </section>
@@ -71,7 +79,7 @@ export default {
         },
         {
           id: 6,
-          title: "Resturant (Collab project)",
+          title: "Resturant",
           liveLink: "https://fyefoodsrestuarant.netlify.app/",
           githubLink: "https://github.com/AbuBakrKhan24/Project_1",
           img: "https://i.postimg.cc/TPTXkCxZ/Restuarant.png",
@@ -83,6 +91,60 @@ export default {
 };
 </script>
 <style>
+.corner-button {
+  font-family: pixel;
+  letter-spacing: 0.02rem;
+  cursor: pointer;
+  background: transparent;
+  border: 0.5rem solid currentColor;
+  padding: 1.5rem 2rem;
+  font-size: 2.2rem;
+  color: #fefefe;
+  position: relative;
+  transition: color 0.3s;
+  z-index: 1;
+}
+.corner-button:hover {
+  color: crimson;
+}
+.corner-button:hover::before {
+  width: 0;
+}
+.corner-button:hover::after {
+  height: 0;
+}
+.corner-button:active {
+  border-width: 0.25rem;
+}
+.corner-button::before,
+.corner-button::after {
+  content: "";
+  position: absolute;
+  background: #2f2f2f;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.corner-button::before {
+  width: calc(100% - 3rem);
+  height: calc(101% + 1rem);
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.corner-button::after {
+  height: calc(100% - 3rem);
+  width: calc(101% + 1rem);
+  left: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#project-language {
+  font-size: 0.8rem;
+}
+#project-title {
+  font-size: 1rem;
+}
 #icon-cont {
   display: flex;
   justify-content: flex-end;
@@ -93,22 +155,38 @@ export default {
 
 #github-link {
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
+}
+#github-link:hover {
+  color: crimson;
 }
 #live-link {
   color: #fefefe;
-  font-size: 3rem;
+  font-size: 2rem;
+}
+#live-link:hover {
+  color: crimson;
 }
 #project-img {
   width: 100%;
-  height: 40rem;
+  height: auto;
   filter: drop-shadow(5px 5px 10px black);
 }
-#project-title {
+#project-title-1 {
   color: whitesmoke;
 }
 #projects {
   min-height: 100vh;
   background-color: black;
+}
+@media only screen and (max-width: 1200px) {
+  #github-link {
+    color: white;
+    font-size: 1rem;
+  }
+  #live-link {
+    color: #fefefe;
+    font-size: 1rem;
+  }
 }
 </style>

@@ -12,6 +12,7 @@
                 class="img-fluid"
                 v-bind:src="testimonial.pixelImg"
                 @click="showModal(testimonial.id)"
+                data-bs-target="#staticBackdrop"
               />
             </div>
           </div>
@@ -26,9 +27,11 @@
           <p>{{ testimonial.testimonial }}</p>
           <p>{{ testimonial.role }}</p>
         </div>
-        <section>
+
+        <section id="modal">
           <dialog
             class="nes-dialog is-dark is-rounded"
+            data-bs-backdrop="static"
             :id="'dialog-dark-rounded' + testimonial.id"
           >
             <form method="dialog">
@@ -39,8 +42,7 @@
                 v-bind:src="testimonial.img"
               />
               <menu class="dialog-menu">
-                <button class="nes-btn">Cancel</button>
-                <button class="nes-btn is-primary">Confirm</button>
+                <button class="nes-btn is-primary">Close</button>
               </menu>
             </form>
           </dialog>
@@ -138,6 +140,33 @@ export default {
 };
 </script>
 <style scoped>
+.nes-dialog {
+  animation: slideIn 3s linear alternate;
+}
+@keyframes slideIn {
+  0% {
+    transform: translate(-100vw);
+  }
+  25% {
+    transform: translate(30vw);
+  }
+  50% {
+    transform: translate(0vw);
+  }
+  /* 80% {
+    transform: translate(150px);
+  } */
+}
+
+.nes-dialog.is-rounded.is-dark {
+  border-image-repeat: inherit;
+  position: fixed;
+  overflow: hidden;
+  width: 20rem;
+}
+menu.dialog-menu {
+  padding-right: 2.6rem;
+}
 #real-img {
   height: 20rem;
 }

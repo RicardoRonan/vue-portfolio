@@ -1,18 +1,23 @@
 <template>
   <router-view />
   <navBar />
-  <footer></footer>
+  <Footer />
 </template>
 
 <script>
 import navBar from "./components/navBar.vue";
+import Footer from "./components/Footer.vue";
 export default {
   components: {
     navBar,
+    Footer,
   },
 };
 </script>
 <style>
+::-webkit-scrollbar {
+  display: none;
+}
 @font-face {
   font-family: pixel;
   src: url(./assets/PressStart2P-Regular.ttf);

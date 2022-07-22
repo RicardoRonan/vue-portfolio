@@ -6,7 +6,7 @@
     <router-link class="items" @click="toggleNav()" to="/">
       <img
         id="fasp-img"
-        v-bind:src="'https://i.postimg.cc/Hnw8gSWt/fasp-01-bruh.png'"
+        v-bind:src="'https://i.postimg.cc/0jcQMVLp/pixilart-drawing-3.png'"
     /></router-link>
 
     <router-link class="items" @click="toggleNav()" to="/">Home</router-link>

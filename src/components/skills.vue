@@ -54,14 +54,14 @@ export default {};
 </script>
 <style>
 #html5 {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #node {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 .card {
   position: relative;
@@ -75,34 +75,34 @@ export default {};
   border-radius: 0;
 }
 #vue3 {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #sql {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #bootstrap {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #github {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #css3 {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #javascript {
-  padding: 4.5rem;
+  padding: 5rem;
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #skill-card {
   height: 15rem;
