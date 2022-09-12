@@ -55,7 +55,7 @@ export default {
         },
         {
           id: 3,
-          title: "Temperature converter",
+          title: "Temp converter",
           liveLink: "https://converter-of-temp.netlify.app/",
           githubLink: "https://github.com/RicardoRonan/Temperature-converter",
           img: "https://i.postimg.cc/7ZDcDhRz/temp-converter.png",
@@ -71,7 +71,7 @@ export default {
         },
         {
           id: 5,
-          title: "Art Gallery (Collab project)",
+          title: "Art Gallery",
           liveLink: "https://leschevresdigitalartgallery.netlify.app/",
           githubLink: "https://github.com/fatimagalant/Vue-Portfolio",
           img: "https://i.postimg.cc/BvP2VcCB/les-chevres.png",

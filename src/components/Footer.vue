@@ -17,7 +17,7 @@
       </div>
       <p class="text-light">
         <i class="fa-regular fa-copyright p-2"></i>Copyright.All rights
-        reserved.
+        reserved.2022
       </p>
     </div>
   </footer>

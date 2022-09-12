@@ -1,7 +1,7 @@
 <template>
   <Landing />
   <div id="loading-bar-cont">
-    <div id="card" class="card m-2">
+    <div id="card" class="card m-2 mx-auto">
       <div id="bar"></div>
     </div>
   </div>
