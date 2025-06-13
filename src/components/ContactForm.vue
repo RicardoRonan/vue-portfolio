@@ -2,59 +2,63 @@
   <section id="contact">
     <h1 id="contact-title">Contact Me!</h1>
     <div class="nes-container is-dark with-title m-4 p-3" id="contact-cont">
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row g-4">
+        <div class="col-lg-6 col-md-12">
           <form action="https://formspree.io/f/mnqwedov" method="POST">
-            <div class="row" id="form-row">
-              <div class="col-md-6">
-                <label for="dark_field" style="color: #fff"></label>
+            <div class="row g-3" id="form-row">
+              <div class="col-sm-6">
+                <label for="firstname_field" class="visually-hidden">First Name</label>
                 <input
                   type="text"
-                  id="dark_field"
-                  class="nes-input m-1"
+                  id="firstname_field"
+                  class="nes-input"
                   placeholder="Firstname"
                   required
                   name="Firstname"
                 />
               </div>
-              <div class="col-md-6">
-                <label for="dark_field" style="color: #fff"></label>
+              <div class="col-sm-6">
+                <label for="surname_field" class="visually-hidden">Surname</label>
                 <input
                   type="text"
-                  id="dark_field"
-                  class="nes-input m-1"
+                  id="surname_field"
+                  class="nes-input"
                   placeholder="Surname"
                   required
                   name="Surname"
                 />
               </div>
             </div>
-            <div class="nes-field">
-              <label for="name_field"></label>
+            <div class="nes-field mb-3">
+              <label for="email_field" class="visually-hidden">Email</label>
               <input
                 type="email"
-                id="name_field"
-                class="nes-input m-1"
+                id="email_field"
+                class="nes-input"
                 placeholder="Your Email"
                 required
                 name="Email"
               />
             </div>
 
-            <label for="textarea_field"></label>
-            <textarea
-              id="textarea_field"
-              class="nes-textarea m-1"
-              placeholder="Your Message"
-              required
-              name="Message"
-            ></textarea>
+            <div class="mb-3">
+              <label for="textarea_field" class="visually-hidden">Message</label>
+              <textarea
+                id="textarea_field"
+                class="nes-textarea"
+                placeholder="Your Message"
+                required
+                name="Message"
+                rows="5"
+              ></textarea>
+            </div>
 
-            <!-- your other form fields go here -->
-            <button type="submit" class="nes-btn is-dark">Send</button>
+            <div class="d-grid">
+              <button type="submit" class="nes-btn is-dark">Send Message</button>
+            </div>
           </form>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-lg-6 col-md-12"></div>
       </div>
       <div id="peach">
         <img
@@ -112,14 +116,14 @@ img#princess {
 }
 #contact-title {
   font-size: 4rem;
-  font-family: pixel;
-  text-shadow: 2px 2px 2px black;
-  color: whitesmoke;
+  font-family: var(--font-family-pixel);
+  text-shadow: 0.125rem 0.125rem 0.125rem black;
+  color: var(--secondary-color);
 }
 #contact {
-  font-family: pixel;
+  font-family: var(--font-family-pixel);
   min-height: 100vh;
-  background-color: black;
+  background-color: var(--background-color);
 }
 .nes-balloon {
   border-image-repeat: inherit;
@@ -129,7 +133,7 @@ img#princess {
   border-image-repeat: inherit;
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 48.125rem) {
   #contact-title {
     font-size: 3rem;
     margin-top: 1rem;
@@ -142,12 +146,12 @@ img#princess {
     padding-top: 9.9rem;
   }
 }
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 45.625rem) {
   div#peach {
     padding-top: 6.29rem;
   }
 }
-@media only screen and (max-width: 616px) {
+@media only screen and (max-width: 38.5rem) {
   #contact-title {
     font-size: 3rem;
     margin-top: 1rem;

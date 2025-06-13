@@ -1,9 +1,9 @@
 <template>
   <div class="nes-container is-dark with-title m-4 p-3" id="resume-cont">
     <h1>Resume</h1>
-    <div class="row">
-      <div class="col-md-6">
-        <div id="mush-cont">
+    <div class="row g-4">
+      <div class="col-lg-6 col-md-12">
+        <div id="mush-cont" class="d-flex justify-content-center">
           <img
             id="mush-img"
             class="img-fluid"
@@ -11,14 +11,14 @@
           />
         </div>
       </div>
-      <div class="col-md-6 p-5">
-        <div class="row">
-          <div class="col-md-6 p-3">
+      <div class="col-lg-6 col-md-12 p-3">
+        <div class="row g-3">
+          <div class="col-xl-6 col-lg-12 col-md-6">
             <div class="card">
               <i class="nes-icon is-large star"></i>
               <h3 class="text-muted fs-5 text-center">Info</h3>
               <p>
-                <span class="text-muted">Profile:</span>Full stack developer
+                <span class="text-muted">Profile:</span>Full-Stack Developer & Automation Specialist
               </p>
               <p>
                 <span class="text-muted">Email:</span>ricardoronanm@gmail.com
@@ -26,8 +26,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 p-3">
-            <div class="card">
+          <div class="col-xl-6 col-lg-12 col-md-6">
+            <div class="card h-100">
               <i class="nes-icon trophy is-large"></i>
               <h3 class="text-muted fs-3 text-center">Matric</h3>
               <p class="fs-5 text-center">2017-2021</p>
@@ -35,19 +35,19 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6 p-3">
-            <div class="card">
+        <div class="row g-3">
+          <div class="col-xl-6 col-lg-12 col-md-6">
+            <div class="card h-100">
               <i class="nes-icon coin is-large"></i>
               <h3 class="text-muted fs-3 text-center">Life-Choices</h3>
-              <p class="fs-5 text-center">2022-Present</p>
+              <p class="fs-5 text-center">Apr 2022 - Sep 2022</p>
               <p class="text-muted text-center">
-                Currently studying Web Development at Life Choices Academy.
+                Web Development Bootcamp at Life Choices Academy.
               </p>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card">
+          <div class="col-xl-6 col-lg-12 col-md-6">
+            <div class="card h-100 d-flex justify-content-center align-items-center">
               <img
                 id="heart"
                 class="img-fluid"
@@ -70,11 +70,11 @@ export default {};
   display: flex;
   align-content: center;
   justify-content: center;
-  filter: drop-shadow(2px 2px 3px black);
+  filter: drop-shadow(0.125rem 0.125rem 0.1875rem black);
 }
 #mush-img {
   padding-left: 1rem;
-  filter: drop-shadow(4px 4px 6px black);
+  filter: drop-shadow(0.25rem 0.25rem 0.375rem black);
 }
 #resume-cont {
   min-height: 80vh;

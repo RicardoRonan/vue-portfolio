@@ -1,18 +1,17 @@
 <template>
-  <button id="menu-btn" type="button" @click="toggleNav()">
+  <button id="menu-btn" class="btn btn-link" type="button" @click="toggleNav()">
     <i class="fa-solid fa-bars" id="bars"></i>
   </button>
   <nav class="nav-links">
-    <router-link class="items" @click="toggleNav()" to="/">
+    <div id="nav-link-container">
+ <router-link class="items" @click="toggleNav()" to="/">
       <img
         id="fasp-img"
         v-bind:src="'https://i.postimg.cc/0jcQMVLp/pixilart-drawing-3.png'"
     /></router-link>
 
     <router-link class="items" @click="toggleNav()" to="/">Home</router-link>
-    <router-link class="items" @click="toggleNav()" to="/about"
-      >About</router-link
-    >
+    <a class="items" @click="scrollToAbout()" href="#About">About</a>
     <router-link class="items" @click="toggleNav()" to="/projects"
       >Projects</router-link
     >
@@ -24,10 +23,12 @@
     <router-link class="items" @click="toggleNav()" to="/contact"
       >Contact</router-link
     >
+    </div>
+   
 
     <button
       id="close-btn"
-      class="text-light"
+      class="text-light btn btn-link"
       type="button"
       @click="toggleNav()"
     >
@@ -44,22 +45,53 @@ export default {
     toggleNav() {
       document.querySelector(".nav-links").classList.toggle("active");
     },
+    scrollToAbout() {
+      this.toggleNav(); // Close the nav menu
+      // Navigate to home page first if not already there
+      if (this.$route.path !== '/') {
+        this.$router.push('/').then(() => {
+          // Wait a bit for the page to load, then scroll
+          setTimeout(() => {
+            const aboutSection = document.getElementById('About');
+            if (aboutSection) {
+              aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        });
+      } else {
+        // Already on home page, just scroll
+        const aboutSection = document.getElementById('About');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    },
   },
 };
 </script>
 <style scoped>
+#nav-link-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem;
+justify-content: center;
+width: 100%;
+}
 #close {
-  color: white;
+  color: var(--text-color);
+  transition: color var(--transition-duration) ease;
 }
 #close:hover {
-  color: crimson;
+  color: var(--primary-color);
 }
 
 #bars {
-  color: whitesmoke;
+  color: var(--secondary-color);
+  transition: color var(--transition-duration) ease;
 }
 #bars:hover {
-  color: crimson;
+  color: var(--primary-color);
 }
 #close-btn {
   font-size: 2rem;
@@ -68,7 +100,8 @@ export default {
   right: 2rem;
   border: none;
   background: transparent;
-  color: whitesmoke;
+  color: var(--secondary-color);
+  cursor: pointer;
 }
 #menu-btn {
   color: grey;
@@ -79,7 +112,8 @@ export default {
   right: 2rem;
   border: none;
   background: transparent;
-  font-family: pixel;
+  font-family: var(--font-family-pixel);
+  cursor: pointer;
 }
 #fasp-img {
   width: 5rem;
@@ -100,37 +134,26 @@ export default {
   text-decoration: none;
 }
 .items:hover {
-  color: whitesmoke;
+  color: var(--secondary-color);
 }
 .nav-links {
   z-index: 100;
-  font-family: pixel;
-
+  font-family: var(--font-family-pixel);
   position: fixed;
   top: -150%;
   left: 0;
   right: 0;
   height: 105vh;
-  background-color: black;
+  background-color: var(--background-color);
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
-  transition: top 0.3s linear;
+  transition: top var(--transition-duration) linear;
 }
 .nav-links.active {
   top: 0;
 }
-@media only screen and (max-width: 600px) {
-  /* #close-btn {
-    margin-left: 21rem;
-    margin-top: 2rem;
-    font-size: 1rem;
-  }
-  #menu-btn {
-    position: fixed;
-    right: -2rem;
-    font-size: 1rem;
-  } */
+@media only screen and (max-width: 37.5rem) {
   .items {
     font-size: 1.5rem;
   }

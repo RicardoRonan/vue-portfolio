@@ -1,9 +1,9 @@
 <template>
   <footer id="footer">
-    <div id="container" class="p-5 m-4 text-light border-top">
+    <div id="container" class="p-4 m-3 text-light border-top">
       <div id="social-icons ">
         <a
-          href="https://www.linkedin.com/in/ricardo-moses-363706231/"
+          href="https://www.linkedin.com/in/ricardo-moses1/"
           class="icons"
           target="_blank"
           ><i class="fa-brands fa-linkedin p-2"></i>
@@ -17,7 +17,7 @@
       </div>
       <p class="text-light">
         <i class="fa-regular fa-copyright p-2"></i>Copyright.All rights
-        reserved.2022
+        reserved.2025
       </p>
     </div>
   </footer>
@@ -28,13 +28,14 @@
 }
 
 /* #container {
-  border-top: 1px solid black;
+  border-top: 0.0625rem solid black;
   width: 90%;
 } */
 .icons {
-  color: whitesmoke;
+  color: var(--secondary-color);
+  transition: color var(--transition-duration) ease;
 }
 .icons:hover {
-  color: crimson;
+  color: var(--primary-color);
 }
 </style>

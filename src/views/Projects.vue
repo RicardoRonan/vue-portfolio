@@ -2,9 +2,9 @@
   <section id="projects" class="m-2 p-3">
     <h1 id="project-title-1">Here are some of my Projects</h1>
     <div class="p-3 m-4 nes-container is-dark with-title">
-      <div class="row">
-        <div v-for="project in projects" :key="project.id" class="col-md-4">
-          <div class="card bg-dark p-3 m-4 corners">
+      <div class="row g-4">
+        <div v-for="project in projects" :key="project.id" class="col-xl-4 col-lg-6 col-md-6">
+          <div class="card bg-dark p-3 corners h-100">
             <h3 id="project-title">{{ project.title }}</h3>
             <div id="img-cont">
               <img
@@ -12,14 +12,14 @@
                 class="img-fluid"
                 v-bind:src="project.img"
               />
-              <div class="row">
-                <div class="col-6 p-4" id="icon-cont">
-                  <a v-bind:href="project.liveLink" target="_blank"
+              <div class="row g-2">
+                <div class="col-6 d-flex justify-content-end align-items-center p-4" id="icon-cont">
+                  <a v-bind:href="project.liveLink" target="_blank" class="text-decoration-none"
                     ><i class="fa-solid fa-link" id="live-link"></i
                   ></a>
                 </div>
-                <div class="col-6 p-4" id="icon-cont-1">
-                  <a v-bind:href="project.githubLink" target="_blank">
+                <div class="col-6 d-flex justify-content-start align-items-center p-4" id="icon-cont-1">
+                  <a v-bind:href="project.githubLink" target="_blank" class="text-decoration-none">
                     <i class="fa-brands fa-github" id="github-link"></i
                   ></a>
                 </div>
@@ -39,51 +39,51 @@ export default {
       projects: [
         {
           id: 1,
-          title: "BMI calculator",
-          liveLink: "https://check-your-bmi.netlify.app/",
-          githubLink: "https://github.com/RicardoRonan/BMI-calculator",
+          title: "Vue.js Portfolio",
+          liveLink: "https://vue-portfolio-c077e.web.app/",
+          githubLink: "https://github.com/RicardoRonan/vue-portfolio",
           img: "https://i.postimg.cc/J4svKSky/BMI-calc.png",
-          language: "HTML5,CSS3,Javascript,Bootstrap",
+          language: "Vue.js, CSS3, JavaScript, Firebase",
         },
         {
           id: 2,
-          title: "To-Do list",
-          liveLink: "https://app-of-the-to-do.netlify.app/",
-          githubLink: "https://github.com/RicardoRonan/todo-app",
-          img: "https://i.postimg.cc/0N0BbsL4/todo-list.png",
-          language: "HTML5,CSS3,Javascript,Bootstrap",
+          title: "BMI Calculator",
+          liveLink: "https://check-your-bmi.netlify.app/",
+          githubLink: "https://github.com/RicardoRonan/BMI-calculator",
+          img: "https://i.postimg.cc/J4svKSky/BMI-calc.png",
+          language: "HTML5, CSS3, JavaScript, Bootstrap",
         },
         {
           id: 3,
-          title: "Temp converter",
-          liveLink: "https://converter-of-temp.netlify.app/",
-          githubLink: "https://github.com/RicardoRonan/Temperature-converter",
-          img: "https://i.postimg.cc/7ZDcDhRz/temp-converter.png",
-          language: "HTML5,CSS3,Javascript,Bootstrap",
+          title: "Task Management App",
+          liveLink: "https://app-of-the-to-do.netlify.app/",
+          githubLink: "https://github.com/RicardoRonan/todo-app",
+          img: "https://i.postimg.cc/0N0BbsL4/todo-list.png",
+          language: "HTML5, CSS3, JavaScript, Bootstrap",
         },
         {
           id: 4,
-          title: "Property Listing",
-          liveLink: "https://listing-of-property.netlify.app/",
-          githubLink: "https://github.com/RicardoRonan/Property-listing",
-          img: "https://i.postimg.cc/Gp6xLSpf/Fye-prooperties.png",
-          language: "HTML5,CSS3,Javascript,Bootstrap",
+          title: "Temperature Converter",
+          liveLink: "https://converter-of-temp.netlify.app/",
+          githubLink: "https://github.com/RicardoRonan/Temperature-converter",
+          img: "https://i.postimg.cc/7ZDcDhRz/temp-converter.png",
+          language: "HTML5, CSS3, JavaScript, Bootstrap",
         },
         {
           id: 5,
-          title: "Art Gallery",
-          liveLink: "https://leschevresdigitalartgallery.netlify.app/",
-          githubLink: "https://github.com/fatimagalant/Vue-Portfolio",
-          img: "https://i.postimg.cc/BvP2VcCB/les-chevres.png",
-          language: "HTML5,CSS3,Vue3,Javascript,Bootstrap",
+          title: "Property Listing Platform",
+          liveLink: "https://listing-of-property.netlify.app/",
+          githubLink: "https://github.com/RicardoRonan/Property-listing",
+          img: "https://i.postimg.cc/Gp6xLSpf/Fye-prooperties.png",
+          language: "HTML5, CSS3, JavaScript, Bootstrap",
         },
         {
           id: 6,
-          title: "Resturant",
-          liveLink: "https://fyefoodsrestuarant.netlify.app/",
-          githubLink: "https://github.com/AbuBakrKhan24/Project_1",
-          img: "https://i.postimg.cc/TPTXkCxZ/Restuarant.png",
-          language: "HTML5,CSS3,Bootstrap",
+          title: "Digital Art Gallery",
+          liveLink: "https://leschevresdigitalartgallery.netlify.app/",
+          githubLink: "https://github.com/fatimagalant/Vue-Portfolio",
+          img: "https://i.postimg.cc/BvP2VcCB/les-chevres.png",
+          language: "Vue.js, CSS3, JavaScript, Bootstrap",
         },
       ],
     };
@@ -92,20 +92,20 @@ export default {
 </script>
 <style>
 .corners {
-  font-family: pixel;
+  font-family: var(--font-family-pixel);
   letter-spacing: 0.02rem;
   background: transparent;
   border: 0.5rem solid currentColor;
   padding: 1.5rem 2rem;
   font-size: 2.2rem;
-  color: #ffffff;
+  color: var(--text-color);
   position: relative;
-  transition: color 0.3s;
+  transition: color var(--transition-duration);
   z-index: 1;
-  border-radius: 0rem;
+  border-radius: var(--border-radius);
 }
 .corners:hover {
-  color: crimson;
+  color: var(--primary-color);
 }
 .corners:hover::before {
   width: 0;
@@ -154,38 +154,40 @@ export default {
 }
 
 #github-link {
-  color: white;
+  color: var(--text-color);
   font-size: 2rem;
+  transition: color var(--transition-duration) ease;
 }
 #github-link:hover {
-  color: crimson;
+  color: var(--primary-color);
 }
 #live-link {
-  color: #fefefe;
+  color: var(--secondary-color);
   font-size: 2rem;
+  transition: color var(--transition-duration) ease;
 }
 #live-link:hover {
-  color: crimson;
+  color: var(--primary-color);
 }
 #project-img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(5px 5px 10px black);
+  filter: drop-shadow(0.3125rem 0.3125rem 0.625rem black);
 }
 #project-title-1 {
-  color: whitesmoke;
+  color: var(--secondary-color);
 }
 #projects {
   min-height: 100vh;
-  background-color: black;
+  background-color: var(--background-color);
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 75rem) {
   #github-link {
-    color: white;
+    color: var(--text-color);
     font-size: 1rem;
   }
   #live-link {
-    color: #fefefe;
+    color: var(--secondary-color);
     font-size: 1rem;
   }
   #project-title {

@@ -4,8 +4,8 @@
     <h3>click pixel art to see the actual person</h3>
     <div v-for="testimonial in testimonials" :key="testimonial.id">
       <section id="testimonials">
-        <div class="card m-3 p-1 shadow bg-dark mx-auto">
-          <div class="container">
+        <div class="card m-3 p-3 shadow bg-dark mx-auto">
+          <div class="container-fluid">
             <div id="img-cont">
               <img
                 id="test-img"
@@ -151,9 +151,6 @@ export default {
   50% {
     transform: translate(0vw);
   }
-  /* 80% {
-    transform: translate(150px);
-  } */
 }
 
 .nes-dialog.is-rounded.is-dark {
@@ -170,15 +167,12 @@ menu.dialog-menu {
 }
 #Name {
   font-size: 1.8rem;
-}
+}.
 .nes-badge.is-icon {
   width: 27.25em;
 }
-/* #badge {
-  background-color: black;
-} */
 #test-title {
-  color: whitesmoke;
+  color: var(--secondary-color);
 }
 .container {
   display: flex;
@@ -199,9 +193,9 @@ menu.dialog-menu {
 }
 #testimonials {
   min-height: fit-content;
-  color: whitesmoke;
+  color: var(--secondary-color);
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 75rem) {
   #Name {
     font-size: 0.9rem;
   }

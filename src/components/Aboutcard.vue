@@ -2,22 +2,17 @@
   <section id="About" class="m-4 p-3">
     <div class="card" id="about-card">
       <h1 id="about-title" class="text-light">About Me !</h1>
-      <div class="row">
-        <div class="col-md-6 text-center">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 col-md-12 d-flex justify-content-center">
           <img
             class="img-fluid"
             id="mario"
             v-bind:src="'https://i.postimg.cc/bvSXm1GR/tinywow-remove-bg-3560831.png'"
           />
         </div>
-        <div class="col-md-6 p-5 text-black shadow">
+        <div class="col-lg-6 col-md-12 p-4">
           <p class="about-text text-light">
-            I am an open-minded, artistic young man. I am friendly, extroverted
-            and I am very adventurous when given the chance. I am always ready
-            to help and I can work in a team easily. I found a passion for
-            technology from a young age , and my love for coding began when I
-            saw my cousin coding a character for a game called M.U.G.E.N and I
-            was intrigued by it.
+            Dedicated Full-Stack Developer with hands-on experience in fintech systems, automation, and scalable web apps. Proven track record of building secure payment integrations, automating business workflows using n8n, and collaborating on full lifecycle development projects. Passionate about digital financial transformation and continuous learning.
           </p>
         </div>
       </div>
@@ -34,22 +29,22 @@ export default {};
 #mario {
   width: 15rem;
   height: 15rem;
-  filter: drop-shadow(4px 4px 4px black);
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem black);
 }
 #About {
-  background-color: black;
+  background-color: var(--background-color);
   /* min-height: 100vh; */
 }
 #about-card {
-  background-color: black;
+  background-color: var(--background-color);
   border: ridge 1rem;
 }
 #about-title {
   font-size: 4rem;
-  font-family: pixel;
-  text-shadow: 2px 2px 2px black;
+  font-family: var(--font-family-pixel);
+  text-shadow: 0.125rem 0.125rem 0.125rem black;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 37.5rem) {
   #about-title {
     font-size: 1.8rem;
     word-break: keep-all;

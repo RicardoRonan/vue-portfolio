@@ -3,46 +3,68 @@
     <h2 id="skills-heading" class="text-light">Skills</h2>
     <div class="container-fluid p-3 m-3" id="skills-cont">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-brands fa-html5" id="html5"></i>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-brands fa-js" id="javascript"></i>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-brands fa-css3-alt" id="css3"></i>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-brands fa-vuejs" id="vue3"></i>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-solid fa-database" id="sql"></i>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-brands fa-bootstrap" id="bootstrap"></i>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-brands fa-github" id="github"></i>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" id="skill-card">
             <i class="fa-brands fa-node" id="node"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card" id="skill-card">
+            <i class="fa-brands fa-microsoft" id="csharp"></i>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card" id="skill-card">
+            <i class="fa-solid fa-cogs" id="automation"></i>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card" id="skill-card">
+            <i class="fa-solid fa-credit-card" id="fintech"></i>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card" id="skill-card">
+            <i class="fa-solid fa-chart-line" id="seo"></i>
           </div>
         </div>
       </div>
@@ -119,7 +141,27 @@ export default {};
   background-repeat: none;
   background-size: cover;
 }
+#csharp {
+  padding: 5rem;
+  color: black;
+  font-size: 4rem;
+}
+#automation {
+  padding: 5rem;
+  color: black;
+  font-size: 4rem;
+}
+#fintech {
+  padding: 5rem;
+  color: black;
+  font-size: 4rem;
+}
+#seo {
+  padding: 5rem;
+  color: black;
+  font-size: 4rem;
+}
 #skills-heading {
-  font-family: pixel;
+  font-family: var(--font-family-pixel);
 }
 </style>
