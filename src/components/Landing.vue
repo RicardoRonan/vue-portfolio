@@ -1,17 +1,13 @@
 <template>
   <section id="home" class="min-vh-100 d-flex flex-column justify-content-center retro-bg scanline-bg">
-    <!-- Floating particles background -->
-    <div class="particles-container">
+    <!-- <div class="particles-container">
       <div v-for="n in 20" :key="n" class="particle" :style="getParticleStyle(n)"></div>
-    </div>
+    </div> -->
     
     <div class="container-fluid-modern">
-      <!-- Main Content Row -->
       <div class="row g-4 align-items-center min-vh-75">
-        <!-- Text Content -->
         <div class="col-lg-6 col-md-12 order-2 order-lg-1">
           <div class="text-content modern-card glass-effect">
-            <!-- Status indicator -->
             <div class="status-indicator">
               <div class="status-dot"></div>
               <span class="status-text">Available for work</span>
