@@ -38,7 +38,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Skills & Experience
 - **Skills:** HTML5, CSS3, JavaScript, Vue.js, Node.js, SQL, C#/.NET, Bootstrap, GitHub, Automation, Fintech, SEO
 - **Experience:**
-  - Automation Specialist at Ttagz (May 2025 – Present)
+  - Automation Specialist at B2b-ai (May 2025 – Present)
   - Software Developer at Payment24 (Mar 2023 – May 2025)
   - SEO Intern at Grizzly New Marketing (Sep 2022 – Dec 2022)
 

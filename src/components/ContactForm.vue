@@ -128,10 +128,9 @@ export default {};
 <style scoped>
 /* Contact Page */
 #contact-page {
-  background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%);
   position: relative;
   overflow: hidden;
-  padding: 4rem 0;
+  padding: 1rem 0;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -359,7 +358,7 @@ export default {};
 /* Speech Bubble */
 .speech-bubble {
   position: absolute;
-  top: -1rem;
+  top: -4rem;
   right: -2rem;
   background: var(--secondary-color);
   color: var(--background-color);

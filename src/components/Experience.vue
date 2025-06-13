@@ -8,7 +8,7 @@
         <div class="row g-3">
           <div class="col-lg-8 col-md-7">
             <h3 class="job-title">Automation Specialist</h3>
-            <h4 class="company-name">Ttagz, Cape Town</h4>
+            <h4 class="company-name">B2b-ai, Cape Town</h4>
             <p class="job-duration">📅 May 2025 – Present</p>
           </div>
           <div class="col-lg-4 col-md-5 d-flex justify-content-center align-items-center">

@@ -22,7 +22,7 @@
               <div class="job-header">
                 <div class="job-info">
                   <h3 class="job-title">Automation Specialist</h3>
-                  <h4 class="company-name">Ttagz, Cape Town</h4>
+                  <h4 class="company-name">B2b-ai, Cape Town</h4>
                   <p class="job-duration">
                     <i class="fa-solid fa-calendar"></i>
                     May 2025 – Present
@@ -73,7 +73,7 @@
                   <h4 class="company-name">Payment24, Cape Town</h4>
                   <p class="job-duration">
                     <i class="fa-solid fa-calendar"></i>
-                    Mar 2023 �� May 2025
+                    Mar 2023 - May 2025
                   </p>
                   <div class="job-duration-length">2 years 2 months</div>
                 </div>
@@ -196,7 +196,7 @@ export default {
 <style scoped>
 /* Experience Page */
 #experience-page {
-  background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%);
+  /* background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%); */
   position: relative;
   overflow: hidden;
   padding: 4rem 0;

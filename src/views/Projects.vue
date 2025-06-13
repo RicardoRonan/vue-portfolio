@@ -124,7 +124,6 @@ export default {
 <style scoped>
 /* Projects Page */
 #projects-page {
-  background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%);
   position: relative;
   overflow: hidden;
   padding: 4rem 0;

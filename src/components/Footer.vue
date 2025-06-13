@@ -5,11 +5,6 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="brand-logo">
-            <img 
-              src="https://i.postimg.cc/0jcQMVLp/pixilart-drawing-3.png" 
-              alt="Ricardo Moses Logo" 
-              class="footer-logo"
-            />
           </div>
           <div class="brand-info">
             <h3 class="brand-name">Ricardo Moses</h3>
@@ -35,7 +30,7 @@
           <div class="contact-info">
             <div class="contact-item">
               <i class="fa-solid fa-envelope"></i>
-              <span>ricardo@example.com</span>
+              <span>ricardoronan@gmail.com.com</span>
             </div>
             <div class="contact-item">
               <i class="fa-solid fa-location-dot"></i>
@@ -57,7 +52,7 @@
           <!-- Social Links -->
           <div class="social-links">
             <a
-              href="https://www.linkedin.com/in/ricardo-moses1/"
+              href="https://www.linkedin.com/in/the-dev-ricardo/"
               class="social-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -130,7 +125,7 @@ export default {
 <style scoped>
 /* Site Footer */
 .site-footer {
-  background: linear-gradient(135deg, var(--background-color) 0%, #0a0a0a 100%);
+  /* background: linear-gradient(135deg, var(--background-color) 0%, #0a0a0a 100%); */
   position: relative;
   overflow: hidden;
   margin-top: 4rem;
@@ -150,7 +145,6 @@ export default {
 .footer-content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem 1rem;
 }
@@ -217,6 +211,7 @@ export default {
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
+  text-align: left;
 }
 
 .links-grid {

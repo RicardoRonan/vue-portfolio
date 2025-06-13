@@ -2,7 +2,7 @@
   <section id="About" class="about-section">
     <div class="container-fluid">
       <!-- About Header -->
-      <div class="about-header text-center mb-5">
+      <div class="about-header text-center">
         <h1 class="about-title text-light mb-3">About Me</h1>
         <div class="header-divider"></div>
       </div>
@@ -15,7 +15,7 @@
             <div class="character-container">
               <div class="character-frame">
                 <img
-                  src="https://i.postimg.cc/bvSXm1GR/tinywow-remove-bg-3560831.png"
+                  src="https://i.postimg.cc/TPLJ7xX4/about-ricardo-removebg-preview.png"
                   alt="Ricardo Moses Character"
                   class="character-image"
                 />
@@ -149,7 +149,6 @@ export default {};
 <style scoped>
 /* About Section */
 .about-section {
-  background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%);
   position: relative;
   overflow: hidden;
   padding: 4rem 0;

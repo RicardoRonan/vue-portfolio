@@ -23,7 +23,7 @@
       <div class="nav-logo pixel-border neon-glow retro-bg scanline-bg">
         <router-link @click="toggleNav()" to="/" class="logo-link">
           <img
-            src="https://i.postimg.cc/0jcQMVLp/pixilart-drawing-3.png"
+            src="https://i.postimg.cc/MH421x0m/pixel-ricardo.png"
             alt="Portfolio Logo"
             class="logo-image pixel-border neon-glow retro-bg scanline-bg"
           />
@@ -219,7 +219,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%);
 }
 
 .nav-background::before {
