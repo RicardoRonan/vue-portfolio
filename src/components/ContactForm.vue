@@ -1,78 +1,122 @@
 <template>
-  <section id="contact">
-    <h1 id="contact-title">Contact Me!</h1>
-    <div class="nes-container is-dark with-title m-4 p-3" id="contact-cont">
-      <div class="row g-4">
-        <div class="col-lg-6 col-md-12">
-          <form action="https://formspree.io/f/mnqwedov" method="POST">
-            <div class="row g-3" id="form-row">
-              <div class="col-sm-6">
-                <label for="firstname_field" class="visually-hidden">First Name</label>
-                <input
-                  type="text"
-                  id="firstname_field"
-                  class="nes-input"
-                  placeholder="Firstname"
-                  required
-                  name="Firstname"
-                />
-              </div>
-              <div class="col-sm-6">
-                <label for="surname_field" class="visually-hidden">Surname</label>
-                <input
-                  type="text"
-                  id="surname_field"
-                  class="nes-input"
-                  placeholder="Surname"
-                  required
-                  name="Surname"
-                />
-              </div>
-            </div>
-            <div class="nes-field mb-3">
-              <label for="email_field" class="visually-hidden">Email</label>
-              <input
-                type="email"
-                id="email_field"
-                class="nes-input"
-                placeholder="Your Email"
-                required
-                name="Email"
-              />
-            </div>
-
-            <div class="mb-3">
-              <label for="textarea_field" class="visually-hidden">Message</label>
-              <textarea
-                id="textarea_field"
-                class="nes-textarea"
-                placeholder="Your Message"
-                required
-                name="Message"
-                rows="5"
-              ></textarea>
-            </div>
-
-            <div class="d-grid">
-              <button type="submit" class="nes-btn is-dark">Send Message</button>
-            </div>
-          </form>
-        </div>
-        <div class="col-lg-6 col-md-12"></div>
+  <section id="contact-page" class="min-vh-100">
+    <div class="container-fluid">
+      <!-- Header Section -->
+      <div class="contact-header text-center mb-5">
+        <h1 class="contact-title text-light mb-3">Get In Touch</h1>
+        <p class="contact-subtitle text-light mb-4">
+          Let's collaborate and bring your ideas to life
+        </p>
+        <div class="header-divider"></div>
       </div>
-      <div id="peach">
-        <img
-          id="princess"
-          v-bind:src="'https://i.postimg.cc/FRBkcq7p/princess-peach-removebg-preview.png'"
-        />
-        <div id="bubble">
-          <section class="message-list">
-            <section class="message -left">
-              <div class="nes-balloon from-left p-1">
-                <p class="nes-text">CONTACT ME!</p>
+
+      <!-- Contact Content -->
+      <div class="contact-content">
+        <div class="row g-4 align-items-center">
+          <!-- Contact Form -->
+          <div class="col-lg-6 col-md-12">
+            <div class="contact-form-container">
+              <form action="https://formspree.io/f/mnqwedov" method="POST" class="contact-form">
+                <div class="form-header">
+                  <h3 class="form-title">Send Message</h3>
+                  <div class="form-subtitle">Fill out the form below and I'll get back to you soon!</div>
+                </div>
+
+                <div class="form-body">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="firstname_field" class="form-label">First Name</label>
+                      <input
+                        type="text"
+                        id="firstname_field"
+                        class="form-input"
+                        placeholder="Enter your first name"
+                        required
+                        name="Firstname"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="surname_field" class="form-label">Last Name</label>
+                      <input
+                        type="text"
+                        id="surname_field"
+                        class="form-input"
+                        placeholder="Enter your last name"
+                        required
+                        name="Surname"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email_field" class="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      id="email_field"
+                      class="form-input"
+                      placeholder="Enter your email address"
+                      required
+                      name="Email"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="textarea_field" class="form-label">Message</label>
+                    <textarea
+                      id="textarea_field"
+                      class="form-textarea"
+                      placeholder="Tell me about your project or just say hello!"
+                      required
+                      name="Message"
+                      rows="5"
+                    ></textarea>
+                  </div>
+
+                  <div class="form-submit">
+                    <button type="submit" class="btn btn-primary btn-submit">
+                      <i class="fa-solid fa-paper-plane"></i>
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Character Section -->
+          <div class="col-lg-6 col-md-12">
+            <div class="character-section">
+              <div class="character-container">
+                <img
+                  src="https://i.postimg.cc/FRBkcq7p/princess-peach-removebg-preview.png"
+                  alt="Contact Character"
+                  class="character-image"
+                />
+                <div class="speech-bubble">
+                  <div class="bubble-content">
+                    <p class="bubble-text">Ready to work together?</p>
+                  </div>
+                  <div class="bubble-tail"></div>
+                </div>
               </div>
-            </section>
-          </section>
+              
+              <!-- Contact Info -->
+              <div class="contact-info">
+                <div class="info-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>Available for freelance work</span>
+                </div>
+                <div class="info-item">
+                  <i class="fa-solid fa-clock"></i>
+                  <span>Usually responds within 24 hours</span>
+                </div>
+                <div class="info-item">
+                  <i class="fa-solid fa-handshake"></i>
+                  <span>Open to collaboration</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -82,86 +126,494 @@
 export default {};
 </script>
 <style scoped>
-.nes-text {
-  color: rgba(91, 88, 88, 0.649);
+/* Contact Page */
+#contact-page {
+  background: linear-gradient(135deg, var(--background-color) 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+  animation: fadeIn 1s ease-in-out;
 }
-div#bubble {
+
+#contact-page::before {
+  content: '';
   position: absolute;
-  left: 52%;
-  bottom: 25%;
-}
-div#peach {
-  padding-top: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="50" cy="10" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="10" cy="90" r="1" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
 }
 
-img#princess {
-  width: 8rem;
-  height: 8rem;
+/* Header Section */
+.contact-header {
+  position: relative;
+  z-index: 2;
+  animation: slideInUp 1s ease-out 0.3s both;
 }
-.nes-field.is-inline > label {
-  flex-basis: 0;
-  flex-grow: 1;
-  margin: 0;
-  margin-right: 0;
-  text-align: right;
-}
-#form-row {
-  margin-top: 10rem;
-}
-#contact-cont {
-  background-image: url(https://i.postimg.cc/bNjYD3sh/tinywow-crop-3590095.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 40rem;
-}
-#contact-title {
-  font-size: 4rem;
+
+.contact-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-family: var(--font-family-pixel);
-  text-shadow: 0.125rem 0.125rem 0.125rem black;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
   color: var(--secondary-color);
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
-#contact {
+
+.contact-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-family: var(--font-family-pixel);
-  min-height: 100vh;
-  background-color: var(--background-color);
-}
-.nes-balloon {
-  border-image-repeat: inherit;
-}
-.nes-input,
-.nes-textarea {
-  border-image-repeat: inherit;
+  color: var(--primary-color);
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
+  opacity: 0.9;
 }
 
-@media only screen and (max-width: 48.125rem) {
-  #contact-title {
-    font-size: 3rem;
-    margin-top: 1rem;
-  }
-  #contact-cont {
-    height: 50rem;
-  }
+.header-divider {
+  width: 6rem;
+  height: 0.25rem;
+  background: linear-gradient(90deg, var(--primary-color), #ff6b9d);
+  margin: 2rem auto;
+  position: relative;
+}
 
-  div#peach {
-    padding-top: 9.9rem;
+.header-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Contact Content */
+.contact-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1rem;
+  animation: slideInUp 1s ease-out 0.5s both;
+}
+
+/* Contact Form Container */
+.contact-form-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.125rem solid var(--primary-color);
+  border-radius: 0;
+  padding: 2rem;
+  backdrop-filter: blur(0.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(220, 20, 60, 0.05), transparent);
+  pointer-events: none;
+}
+
+/* Form Header */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.form-title {
+  font-family: var(--font-family-pixel);
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
+}
+
+.form-subtitle {
+  font-family: var(--font-family-pixel);
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Form Body */
+.form-body {
+  position: relative;
+  z-index: 2;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-family-pixel);
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-family: var(--font-family-pixel);
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 0.125rem solid rgba(245, 245, 220, 0.3);
+  border-radius: 0;
+  color: var(--text-color);
+  transition: all var(--transition-duration) ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.125rem rgba(220, 20, 60, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-family-pixel);
+  font-size: 0.7rem;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+/* Form Submit */
+.form-submit {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: var(--font-family-pixel);
+  font-size: 0.9rem;
+  background-color: var(--primary-color);
+  border: 0.125rem solid var(--primary-color);
+  border-radius: 0;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  transition: all var(--transition-duration) ease;
+}
+
+.btn-submit:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.5rem 1rem rgba(220, 20, 60, 0.3);
+}
+
+.btn-submit i {
+  font-size: 0.8rem;
+}
+
+/* Character Section */
+.character-section {
+  text-align: center;
+  animation: slideInRight 1s ease-out 0.7s both;
+}
+
+.character-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.character-image {
+  width: 12rem;
+  height: 12rem;
+  object-fit: contain;
+  filter: drop-shadow(0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5));
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* Speech Bubble */
+.speech-bubble {
+  position: absolute;
+  top: -1rem;
+  right: -2rem;
+  background: var(--secondary-color);
+  color: var(--background-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  border: 0.125rem solid var(--primary-color);
+  min-width: 8rem;
+  animation: pulse 2s infinite;
+}
+
+.bubble-content {
+  position: relative;
+}
+
+.bubble-text {
+  font-family: var(--font-family-pixel);
+  font-size: 0.7rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.bubble-tail {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 2rem;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid var(--secondary-color);
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.0625rem solid rgba(245, 245, 220, 0.2);
+  border-radius: 0;
+  transition: all var(--transition-duration) ease;
+}
+
+.info-item:hover {
+  background: rgba(220, 20, 60, 0.1);
+  border-color: var(--primary-color);
+  transform: translateX(0.5rem);
+}
+
+.info-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  min-width: 1.5rem;
+}
+
+.info-item span {
+  font-family: var(--font-family-pixel);
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@media only screen and (max-width: 45.625rem) {
-  div#peach {
-    padding-top: 6.29rem;
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
-@media only screen and (max-width: 38.5rem) {
-  #contact-title {
-    font-size: 3rem;
-    margin-top: 1rem;
-  }
-  #contact-cont {
-    height: 55rem;
-  }
 
-  div#peach {
-    padding-top: 10.9rem;
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1rem); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    padding: 1rem;
+  }
+  
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .form-title {
+    font-size: 1.2rem;
+  }
+  
+  .character-image {
+    width: 8rem;
+    height: 8rem;
+  }
+  
+  .speech-bubble {
+    top: -0.5rem;
+    right: -1rem;
+    min-width: 6rem;
+  }
+  
+  .bubble-text {
+    font-size: 0.6rem;
+  }
+  
+  .contact-info {
+    max-width: 100%;
+  }
+  
+  .info-item {
+    padding: 0.75rem;
+  }
+  
+  .info-item span {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-title {
+    font-size: 1.8rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .contact-form-container {
+    padding: 1rem;
+  }
+  
+  .form-title {
+    font-size: 1rem;
+  }
+  
+  .form-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 0.6rem;
+    font-size: 0.7rem;
+  }
+  
+  .btn-submit {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .character-image {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .speech-bubble {
+    min-width: 5rem;
+  }
+  
+  .bubble-text {
+    font-size: 0.5rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .character-image {
+    animation: none;
+  }
+  
+  .speech-bubble {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .contact-form-container {
+    border-color: #ffffff;
+    background: #000000;
+  }
+  
+  .form-input,
+  .form-textarea {
+    border-color: #ffffff;
+    background: #000000;
+  }
+  
+  .speech-bubble {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+  }
+  
+  .info-item {
+    border-color: #ffffff;
+    background: #000000;
   }
 }
 </style>

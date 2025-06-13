@@ -11,16 +11,20 @@ const routes = [
     name: "projects",
     component: () => import("../views/Projects.vue"),
   },
-
   {
-    path: "/contact",
-    name: "contact",
-    component: () => import("../views/Contact.vue"),
+    path: "/experience",
+    name: "experience",
+    component: () => import("../views/Experience.vue"),
   },
   {
     path: "/testimonials",
     name: "testimonials",
     component: () => import("../views/Testimonials.vue"),
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: () => import("../views/Contact.vue"),
   },
 ];
 

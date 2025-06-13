@@ -1,13 +1,10 @@
 <template>
-  <div id="home-page">
+  <div id="home-page" class="retro-bg scanline-bg">
     <Landing />
     
     <!-- Content Sections -->
-    <div class="content-sections">
+    <div class="content-sections pixel-border neon-glow retro-bg scanline-bg">
       <Aboutcard />
-      <skills />
-      <Experience />
-      <resumeCard />
     </div>
   </div>
 </template>
@@ -15,18 +12,12 @@
 <script>
 import Landing from "../components/Landing.vue";
 import Aboutcard from "../components/Aboutcard.vue";
-import skills from "../components/skills.vue";
-import Experience from "../components/Experience.vue";
-import resumeCard from "../components/resumeCard.vue";
 
 export default {
   name: 'Home',
   components: {
     Landing,
     Aboutcard,
-    skills,
-    Experience,
-    resumeCard,
   },
   mounted() {
     // Smooth scroll behavior for the page
@@ -54,18 +45,6 @@ export default {
 /* Add subtle fade-in animation for content sections */
 .content-sections > *:nth-child(1) {
   animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.content-sections > *:nth-child(2) {
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.content-sections > *:nth-child(3) {
-  animation: fadeInUp 0.8s ease-out 0.6s both;
-}
-
-.content-sections > *:nth-child(4) {
-  animation: fadeInUp 0.8s ease-out 0.8s both;
 }
 
 @keyframes fadeInUp {

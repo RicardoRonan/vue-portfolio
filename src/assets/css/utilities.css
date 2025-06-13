@@ -1,5 +1,17 @@
 /* CSS Utilities - Best Practices Implementation */
 
+:root {
+  /* Existing color palette (keep these as is) */
+  /* Add new retro-futurism variables */
+  --neon-glow: 0 0 8px var(--primary-color), 0 0 16px var(--secondary-color);
+  --pixel-border: 4px solid var(--primary-color);
+  --retro-bg: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 20px), repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 20px);
+  --scanline-bg: repeating-linear-gradient(180deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 4px);
+  --font-family-pixel: 'Press Start 2P', 'VT323', 'Share Tech Mono', monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&display=swap');
+
 /* ==========================================================================
    UTILITY CLASSES
    ========================================================================== */
@@ -85,6 +97,10 @@
 .border { border: 0.0625rem solid currentColor; }
 .border-2 { border: 0.125rem solid currentColor; }
 .border-4 { border: 0.25rem solid currentColor; }
+.pixel-border { border: var(--pixel-border); image-rendering: pixelated; }
+.neon-glow { box-shadow: var(--neon-glow) !important; }
+.retro-bg { background: var(--retro-bg); }
+.scanline-bg { background: var(--scanline-bg); }
 
 /* Responsive utilities */
 @media (max-width: 37.5rem) {
@@ -122,10 +138,12 @@
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
-  border: 0.125rem solid transparent;
-  border-radius: var(--border-radius);
+  border: var(--pixel-border);
+  border-radius: 0;
   transition: all var(--transition-duration) ease;
   user-select: none;
+  box-shadow: var(--neon-glow);
+  background: var(--scanline-bg);
 }
 
 .btn-primary {
@@ -155,11 +173,12 @@
 /* Card components */
 .card {
   background-color: var(--background-color);
-  border: 0.125rem solid currentColor;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-medium);
+  border: var(--pixel-border);
+  border-radius: 0;
+  box-shadow: var(--neon-glow);
   overflow: hidden;
   width: 55%;
+  background: var(--retro-bg), var(--scanline-bg), var(--background-color);
 }
 
 .card-header {

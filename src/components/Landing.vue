@@ -1,23 +1,62 @@
 <template>
-  <section id="home" class="min-vh-100 d-flex flex-column justify-content-center">
-    <div class="container-fluid">
+  <section id="home" class="min-vh-100 d-flex flex-column justify-content-center retro-bg scanline-bg">
+    <!-- Floating particles background -->
+    <div class="particles-container">
+      <div v-for="n in 20" :key="n" class="particle" :style="getParticleStyle(n)"></div>
+    </div>
+    
+    <div class="container-fluid-modern">
       <!-- Main Content Row -->
       <div class="row g-4 align-items-center min-vh-75">
         <!-- Text Content -->
         <div class="col-lg-6 col-md-12 order-2 order-lg-1">
-          <div class="text-content">
-            <h1 id="title" class="text-light mb-3">Hi, I'm Ricardo Moses</h1>
-            <h2 id="sub-title" class="text-light mb-4">Full-Stack Developer & Automation Specialist</h2>
-            <p class="lead text-light mb-4">
-              Passionate about creating efficient and scalable solutions with expertise in fintech systems, automation, and modern web technologies.
+          <div class="text-content modern-card glass-effect">
+            <!-- Status indicator -->
+            <div class="status-indicator">
+              <div class="status-dot"></div>
+              <span class="status-text">Available for work</span>
+            </div>
+            
+            <h1 id="title" class="text-display text-light mb-3">
+              Hi, I'm <span class="gradient-text">Ricardo Moses</span>
+            </h1>
+            <h2 id="sub-title" class="text-heading text-light mb-4">
+              Full-Stack Developer & Automation Specialist
+            </h2>
+            <p class="text-body mb-4">
+              Passionate about creating efficient and scalable solutions with expertise in fintech systems, automation, and modern web technologies. I transform complex problems into elegant digital experiences.
             </p>
+            
+            <!-- Skills tags -->
+            <div class="skills-tags mb-4">
+              <span class="skill-tag" v-for="skill in skills" :key="skill">{{ skill }}</span>
+            </div>
+            
             <div class="cta-buttons">
-              <router-link to="/projects" class="btn btn-primary btn-lg me-3 mb-2">
+              <router-link to="/projects" class="btn-modern btn-primary-modern">
+                <i class="fas fa-code"></i>
                 View My Work
               </router-link>
-              <router-link to="/contact" class="btn btn-outline-light btn-lg mb-2">
+              <router-link to="/contact" class="btn-modern btn-secondary-modern">
+                <i class="fas fa-envelope"></i>
                 Get In Touch
               </router-link>
+            </div>
+            
+            <!-- Social proof -->
+            <div class="social-proof">
+              <div class="proof-item">
+                <span class="proof-number">5+</span>
+                <span class="proof-label">Years Experience</span>
+              </div>
+              <div class="proof-item">
+                <span class="proof-number">50+</span>
+                <span class="proof-label">Projects Completed</span>
+              </div>
+              <div class="proof-item">
+                <span class="proof-number">100%</span>
+                <span class="proof-label">Client Satisfaction</span>
+              </div>
             </div>
           </div>
         </div>
@@ -25,32 +64,68 @@
         <!-- Image Content -->
         <div class="col-lg-6 col-md-12 order-1 order-lg-2">
           <div id="me-cont" class="d-flex justify-content-center">
-            <img
-              id="me"
-              class="img-fluid"
-              v-bind:src="'https://i.postimg.cc/52Xq5V3F/okay-okay-removebg-preview-1.png'"
-              alt="Ricardo Moses - Developer Avatar"
-            />
+            <div class="avatar-container modern-card glass-effect">
+              <div class="avatar-glow"></div>
+              <img
+                id="me"
+                class="img-fluid"
+                v-bind:src="'https://i.postimg.cc/MH421x0m/pixel-ricardo.png'"
+                alt="Ricardo Moses - Developer Avatar"
+                loading="lazy"
+              />
+              <!-- Floating icons around avatar -->
+              <div class="floating-icons">
+                <div class="floating-icon" style="--delay: 0s; --x: -20px; --y: -30px;">
+                  <i class="fab fa-vue"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 1s; --x: 40px; --y: -20px;">
+                  <i class="fab fa-js"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 2s; --x: -30px; --y: 40px;">
+                  <i class="fab fa-python"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 3s; --x: 30px; --y: 50px;">
+                  <i class="fab fa-node-js"></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
-      <!-- Loading Bar Section -->
-      <div class="row">
+      <!-- Enhanced Loading Bar Section -->
+      <div class="row" v-if="showLoading">
         <div class="col-12">
           <div id="loading-bar-cont" class="d-flex justify-content-center mt-4">
-            <div id="loading-card" class="loading-container">
-              <div class="loading-label mb-2">
-                <span class="text-light">Loading Portfolio...</span>
+            <div id="loading-card" class="loading-container modern-card glass-effect">
+              <div class="loading-header">
+                <div class="loading-icon">
+                  <i class="fas fa-code spinning"></i>
+                </div>
+                <div class="loading-label">
+                  <span class="text-light">Initializing Portfolio...</span>
+                  <span class="loading-dots">...</span>
+                </div>
               </div>
               <div id="card" class="progress-card">
-                <div id="bar" class="progress-bar"></div>
+                <div id="bar" class="progress-bar">
+                  <div class="progress-shine"></div>
+                </div>
               </div>
-              <div class="loading-percentage mt-2">
-                <span id="percentage" class="text-light">0%</span>
+              <div class="loading-footer">
+                <span id="percentage" class="loading-percentage">{{ loadingProgress }}%</span>
+                <span class="loading-status">{{ loadingStatus }}</span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" v-if="!showLoading">
+        <div class="scroll-text">Scroll to explore</div>
+        <div class="scroll-arrow">
+          <i class="fas fa-chevron-down"></i>
         </div>
       </div>
     </div>
