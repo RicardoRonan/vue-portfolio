@@ -7,25 +7,24 @@ const routes = [
     component: () => import("../views/Home.vue"),
   },
   {
-    path: "/about",
-    name: "about",
-    component: () => import("../views/About.vue"),
-  },
-  {
     path: "/projects",
     name: "projects",
     component: () => import("../views/Projects.vue"),
   },
-
   {
-    path: "/contact",
-    name: "contact",
-    component: () => import("../views/Contact.vue"),
+    path: "/experience",
+    name: "experience",
+    component: () => import("../views/Experience.vue"),
   },
   {
     path: "/testimonials",
     name: "testimonials",
     component: () => import("../views/Testimonials.vue"),
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: () => import("../views/Contact.vue"),
   },
 ];
 
