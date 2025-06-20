@@ -65,6 +65,16 @@
         <router-link 
           class="nav-item pixel-border neon-glow retro-bg scanline-bg" 
           @click="toggleNav()" 
+          to="/blog"
+          active-class="active"
+        >
+          <i class="fa-solid fa-blog nav-icon"></i>
+          <span class="nav-text">Blog</span>
+        </router-link>
+
+        <router-link 
+          class="nav-item pixel-border neon-glow retro-bg scanline-bg" 
+          @click="toggleNav()" 
           to="/testimonials"
           active-class="active"
         >
