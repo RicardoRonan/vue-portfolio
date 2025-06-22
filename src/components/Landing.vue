@@ -27,9 +27,9 @@
           <div id="me-cont" class="d-flex justify-content-center">
             <img
               id="me"
-              class="img-fluid"
-              v-bind:src="'https://i.postimg.cc/MH421x0m/pixel-ricardo.png'"
-              alt="Ricardo Moses - Developer Avatar"
+              class="img-fluid responsive-img"
+              src="https://i.postimg.cc/MH421x0m/pixel-ricardo.png"
+              alt="Ricardo Moses pixel avatar"
             />
           </div>
         </div>
@@ -432,5 +432,12 @@ export default {
   #me {
     animation: none;
   }
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 </style>

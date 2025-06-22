@@ -6,8 +6,9 @@
         <div id="mush-cont" class="d-flex justify-content-center">
           <img
             id="mush-img"
-            class="img-fluid"
-            v-bind:src="'https://i.postimg.cc/G28Tbjhf/tinywow-remove-bg-3559006.png'"
+            class="img-fluid responsive-img"
+            src="https://i.postimg.cc/G28Tbjhf/tinywow-remove-bg-3559006.png"
+            alt="Mushroom pixel art for resume section"
           />
         </div>
       </div>
@@ -50,8 +51,9 @@
             <div class="card h-100 d-flex justify-content-center align-items-center">
               <img
                 id="heart"
-                class="img-fluid"
-                v-bind:src="'https://i.postimg.cc/N0H8xXB2/heart.png'"
+                class="img-fluid responsive-img"
+                src="https://i.postimg.cc/N0H8xXB2/heart.png"
+                alt="Heart pixel art for resume section"
               />
             </div>
           </div>
@@ -78,5 +80,11 @@ export default {};
 }
 #resume-cont {
   min-height: 80vh;
+}
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 </style>

@@ -16,8 +16,8 @@
               <div class="character-frame">
                 <img
                   src="https://i.postimg.cc/TPLJ7xX4/about-ricardo-removebg-preview.png"
-                  alt="Ricardo Moses Character"
-                  class="character-image"
+                  alt="Ricardo Moses character illustration"
+                  class="character-image responsive-img"
                 />
               </div>
               <!-- Floating Stats -->
@@ -668,5 +668,12 @@ export default {};
     border-color: #ffffff;
     background: #000000;
   }
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 </style>
