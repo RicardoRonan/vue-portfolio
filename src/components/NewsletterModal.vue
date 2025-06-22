@@ -54,7 +54,7 @@ export default {
       this.showModal = false;
     },
     submitForm() {
-      // TODO: Hook up to WordPress newsletter endpoint
+      // Newsletter subscription functionality will be implemented here
       alert('Thank you for subscribing!');
       this.closeModal();
     },
@@ -73,7 +73,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeIn 0.3s;
+  animation: fadeIn var(--animation-duration-subtle);
 }
 
 .newsletter-modal {
@@ -85,7 +85,7 @@ export default {
   padding: 2.5rem 2rem 2rem 2rem;
   box-shadow: 0 2rem 4rem rgba(0,0,0,0.25);
   text-align: center;
-  animation: popIn 0.4s cubic-bezier(.5,1.8,.5,1) both;
+  animation: popIn var(--animation-duration-subtle) cubic-bezier(.5,1.8,.5,1) both;
 }
 
 .modal-close {
@@ -97,7 +97,7 @@ export default {
   font-size: 2rem;
   color: #222;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color var(--animation-duration-subtle);
   z-index: 10;
 }
 .modal-close:hover {
@@ -129,6 +129,7 @@ export default {
 
 .modal-content {
   margin-top: 2.5rem;
+  animation: popIn var(--animation-duration-subtle) cubic-bezier(.5,1.8,.5,1) both;
 }
 .modal-eyebrow {
   font-size: 0.9rem;
@@ -163,7 +164,7 @@ export default {
   border-radius: 0.4rem;
   font-size: 1rem;
   outline: none;
-  transition: border 0.2s;
+  transition: border var(--animation-duration-subtle);
 }
 .newsletter-input:focus {
   border-color: #dc143c;
@@ -176,7 +177,7 @@ export default {
   padding: 0 1.3rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--animation-duration-subtle);
 }
 .newsletter-submit:hover {
   background: #dc143c;

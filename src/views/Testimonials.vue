@@ -1,82 +1,90 @@
 <template>
-  <section id="testimonials-page" class="min-vh-100 retro-bg scanline-bg">
-    <div class="container-fluid">
-      <!-- Header Section -->
-      <div class="testimonials-header text-center mb-5 pixel-border neon-glow retro-bg scanline-bg">
-        <h1 class="testimonials-title text-light mb-3">What People Say</h1>
-        <p class="testimonials-subtitle text-light mb-4">
-          Click the pixel avatars to see the real person
-        </p>
-        <div class="header-divider"></div>
-      </div>
-
-      <!-- Testimonials Grid -->
-      <div class="testimonials-grid">
-        <div 
-          v-for="testimonial in testimonials" 
-          :key="testimonial.id"
-          class="testimonial-card pixel-border neon-glow retro-bg scanline-bg"
-        >
-          <div class="testimonial-content">
-            <!-- Avatar Section -->
-            <div class="avatar-container" @click="showModal(testimonial.id)">
-              <div class="avatar-frame pixel-border neon-glow retro-bg scanline-bg">
-                <img
-                  :src="testimonial.pixelImg"
-                  :alt="testimonial.name + ' pixel avatar'"
-                  class="pixel-avatar"
-                />
-              </div>
-              <div class="click-hint">
-                <span>Click to reveal</span>
-              </div>
-            </div>
-
-            <!-- Name and Role -->
-            <div class="testimonial-header">
-              <div class="name-badge">
-                <div class="star-icon">★</div>
-                <h3 class="testimonial-name">{{ testimonial.name }}</h3>
-              </div>
-              <p class="testimonial-role">{{ testimonial.role }}</p>
-            </div>
-
-            <!-- Testimonial Text -->
-            <div class="testimonial-text">
-              <div class="quote-mark">"</div>
-              <p class="testimonial-content-text">{{ testimonial.testimonial }}</p>
-              <div class="quote-mark quote-end">"</div>
-            </div>
+  <div class="testimonials-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="hero-title">What People Say</h1>
+            <p class="hero-subtitle">
+              Click the pixel avatars to see the real person
+            </p>
           </div>
-
-          <!-- Modal -->
-          <dialog
-            class="testimonial-modal pixel-border neon-glow retro-bg scanline-bg"
-            :id="'dialog-' + testimonial.id"
-          >
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3 class="modal-title">{{ testimonial.name }}</h3>
-                <button class="modal-close" @click="closeModal(testimonial.id)">×</button>
-              </div>
-              <div class="modal-body">
-                <img
-                  :src="testimonial.img"
-                  :alt="testimonial.name"
-                  class="real-photo"
-                />
-              </div>
-              <div class="modal-footer">
-                <button class="btn btn-primary" @click="closeModal(testimonial.id)">
-                  Close
-                </button>
-              </div>
-            </div>
-          </dialog>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Testimonials Content -->
+    <section class="testimonials-content">
+      <div class="container-fluid">
+        <!-- Testimonials Grid -->
+        <div class="testimonials-grid">
+          <div 
+            v-for="testimonial in testimonials" 
+            :key="testimonial.id"
+            class="testimonial-card pixel-border neon-glow retro-bg scanline-bg"
+          >
+            <div class="testimonial-content">
+              <!-- Avatar Section -->
+              <div class="avatar-container" @click="showModal(testimonial.id)">
+                <div class="avatar-frame pixel-border neon-glow retro-bg scanline-bg">
+                  <img
+                    :src="testimonial.pixelImg"
+                    :alt="testimonial.name + ' pixel avatar'"
+                    class="pixel-avatar"
+                  />
+                </div>
+                <div class="click-hint">
+                  <span>Click to reveal</span>
+                </div>
+              </div>
+
+              <!-- Name and Role -->
+              <div class="testimonial-header">
+                <div class="name-badge">
+                  <div class="star-icon">★</div>
+                  <h3 class="testimonial-name">{{ testimonial.name }}</h3>
+                </div>
+                <p class="testimonial-role">{{ testimonial.role }}</p>
+              </div>
+
+              <!-- Testimonial Text -->
+              <div class="testimonial-text">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-content-text">{{ testimonial.testimonial }}</p>
+                <div class="quote-mark quote-end">"</div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <dialog
+              class="testimonial-modal pixel-border neon-glow retro-bg scanline-bg"
+              :id="'dialog-' + testimonial.id"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title">{{ testimonial.name }}</h3>
+                  <button class="modal-close" @click="closeModal(testimonial.id)">×</button>
+                </div>
+                <div class="modal-body">
+                  <img
+                    :src="testimonial.img"
+                    :alt="testimonial.name"
+                    class="real-photo"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" @click="closeModal(testimonial.id)">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </dialog>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 <script>
 export default {
@@ -178,14 +186,15 @@ export default {
 </script>
 <style scoped>
 /* Testimonials Page */
-#testimonials-page {
+.testimonials-page {
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
   position: relative;
   overflow: hidden;
-  padding: 4rem 0;
-  animation: fadeIn 1s ease-in-out;
 }
 
-#testimonials-page::before {
+.testimonials-page::before {
   content: '';
   position: absolute;
   top: 0;
@@ -196,58 +205,48 @@ export default {
   pointer-events: none;
 }
 
-/* Header Section */
-.testimonials-header {
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0 2rem 0;
+  background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(245, 245, 220, 0.1));
+  border-bottom: 0.125rem solid var(--primary-color);
   position: relative;
   z-index: 2;
-  animation: slideInUp 1s ease-out 0.3s both;
 }
 
-.testimonials-title {
+.hero-title {
+  font-family: var(--font-family-pixel);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-family: var(--font-family-pixel);
-  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
-  color: var(--secondary-color);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.testimonials-subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-family: var(--font-family-pixel);
   color: var(--primary-color);
   text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
-  opacity: 0.9;
+  margin-bottom: 1rem;
+  animation: slideInDown var(--animation-duration-subtle) ease-out;
 }
 
-.header-divider {
-  width: 6rem;
-  height: 0.25rem;
-  background: linear-gradient(90deg, var(--primary-color), #ff6b9d);
-  margin: 2rem auto;
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--secondary-color);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
+}
+
+/* Testimonials Content */
+.testimonials-content {
+  padding: 3rem 0;
   position: relative;
-}
-
-.header-divider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+  z-index: 2;
 }
 
 /* Testimonials Grid */
 .testimonials-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem 1rem;
-  position: relative;
-  z-index: 2;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: slideInUp var(--animation-duration-subtle) ease-out both;
 }
 
 /* Testimonial Card */
@@ -260,20 +259,20 @@ export default {
   backdrop-filter: blur(0.5rem);
   position: relative;
   overflow: hidden;
-  animation: slideInUp 0.8s ease-out both;
+  animation: slideInUp var(--animation-duration-subtle) ease-out both;
   flex: 1 1 22rem;
   max-width: 30rem;
   min-width: 22rem;
 }
 
-.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
-.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
-.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
-.testimonial-card:nth-child(4) { animation-delay: 0.4s; }
-.testimonial-card:nth-child(5) { animation-delay: 0.5s; }
-.testimonial-card:nth-child(6) { animation-delay: 0.6s; }
-.testimonial-card:nth-child(7) { animation-delay: 0.7s; }
-.testimonial-card:nth-child(8) { animation-delay: 0.8s; }
+.testimonial-card:nth-child(1) { animation-delay: var(--animation-delay-small); }
+.testimonial-card:nth-child(2) { animation-delay: var(--animation-delay-medium); }
+.testimonial-card:nth-child(3) { animation-delay: var(--animation-delay-medium); }
+.testimonial-card:nth-child(4) { animation-delay: var(--animation-delay-large); }
+.testimonial-card:nth-child(5) { animation-delay: var(--animation-delay-large); }
+.testimonial-card:nth-child(6) { animation-delay: var(--animation-delay-larger); }
+.testimonial-card:nth-child(7) { animation-delay: var(--animation-delay-larger); }
+.testimonial-card:nth-child(8) { animation-delay: var(--animation-delay-largest); }
 
 .testimonial-card:hover {
   transform: translateY(-0.5rem);
@@ -363,7 +362,7 @@ export default {
 .star-icon {
   color: var(--primary-color);
   font-size: 1.2rem;
-  animation: pulse 2s infinite;
+  animation: pulse var(--animation-duration-infinite) infinite;
 }
 
 .testimonial-name {
@@ -527,6 +526,17 @@ export default {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInUp {

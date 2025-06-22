@@ -36,6 +36,16 @@ const routes = [
     name: "single-blog",
     component: () => import("../views/SingleBlog.vue"),
   },
+  {
+    path: "/resources",
+    name: "resources",
+    component: () => import("../views/Resources.vue"),
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: () => import("../views/Admin.vue"),
+  },
 ];
 
 const router = createRouter({

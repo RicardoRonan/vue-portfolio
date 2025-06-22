@@ -17,14 +17,24 @@ export default {
 <style>
 /* CSS Custom Properties for consistent theming */
 :root {
-  --primary-color: #dc143c; /* crimson */
-  --secondary-color: #f5f5dc; /* whitesmoke */
-  --background-color: #000000; /* black */
-  --text-color: #ffffff; /* white */
+  --primary-color: #dc143c;
+  --secondary-color: #f5f5dc;
+  --background-color: #000000;
+  --text-color: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.5);
-  --border-radius: 0; /* pixel art style */
+  --border-radius: 0;
   --font-family-pixel: pixel;
-  --transition-duration: 0.3s;
+  
+  /* Animation Durations */
+  --transition-duration: 0.2s;
+  --animation-duration-subtle: 0.4s;
+  --animation-duration-slow: 0.8s;
+  
+  /* Animation Delays */
+  --animation-delay-small: 0.1s;
+  --animation-delay-medium: 0.2s;
+  
+  /* Box Shadows */
   --box-shadow-light: 0.125rem 0.125rem 0.25rem var(--shadow-color);
   --box-shadow-medium: 0.25rem 0.25rem 0.375rem var(--shadow-color);
   --box-shadow-heavy: 0.3125rem 0.3125rem 0.625rem var(--shadow-color);
@@ -39,7 +49,7 @@ export default {
 @font-face {
   font-family: pixel;
   src: url(./assets/PressStart2P-Regular.ttf);
-  font-display: swap; /* Better performance */
+  font-display: swap;
 }
 
 /* Global app styles */

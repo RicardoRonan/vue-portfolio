@@ -1,17 +1,22 @@
 <template>
-  <section id="contact-page" class="min-vh-100">
-    <div class="container-fluid">
-      <!-- Header Section -->
-      <div class="contact-header text-center mb-5">
-        <h1 class="contact-title text-light mb-3">Get In Touch</h1>
-        <p class="contact-subtitle text-light mb-4">
-          Let's collaborate and bring your ideas to life
-        </p>
-        <div class="header-divider"></div>
+  <div class="contact-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="hero-title">Get In Touch</h1>
+            <p class="hero-subtitle">
+              Let's collaborate and bring your ideas to life
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Contact Content -->
-      <div class="contact-content">
+    <!-- Contact Content -->
+    <section class="contact-content">
+      <div class="container-fluid">
         <div class="row g-4 align-items-center">
           <!-- Contact Form -->
           <div class="col-lg-6 col-md-12">
@@ -120,22 +125,23 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 <script>
 export default {};
 </script>
 <style scoped>
 /* Contact Page */
-#contact-page {
+.contact-page {
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
   position: relative;
   overflow: hidden;
-  padding: 1rem 0;
-  animation: fadeIn 1s ease-in-out;
 }
 
-#contact-page::before {
+.contact-page::before {
   content: '';
   position: absolute;
   top: 0;
@@ -146,55 +152,37 @@ export default {};
   pointer-events: none;
 }
 
-/* Header Section */
-.contact-header {
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0 2rem 0;
+  background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(245, 245, 220, 0.1));
+  border-bottom: 0.125rem solid var(--primary-color);
   position: relative;
   z-index: 2;
-  animation: slideInUp 1s ease-out 0.3s both;
 }
 
-.contact-title {
+.hero-title {
+  font-family: var(--font-family-pixel);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-family: var(--font-family-pixel);
-  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
-  color: var(--secondary-color);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.contact-subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-family: var(--font-family-pixel);
   color: var(--primary-color);
   text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
-  opacity: 0.9;
+  margin-bottom: 1rem;
+  animation: slideInDown var(--animation-duration-subtle) ease-out;
 }
 
-.header-divider {
-  width: 6rem;
-  height: 0.25rem;
-  background: linear-gradient(90deg, var(--primary-color), #ff6b9d);
-  margin: 2rem auto;
-  position: relative;
-}
-
-.header-divider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--secondary-color);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
 }
 
 /* Contact Content */
 .contact-content {
+  padding: 3rem 0;
   position: relative;
   z-index: 2;
-  padding: 2rem 1rem;
-  animation: slideInUp 1s ease-out 0.5s both;
 }
 
 /* Contact Form Container */
@@ -206,6 +194,7 @@ export default {};
   backdrop-filter: blur(0.5rem);
   position: relative;
   overflow: hidden;
+  animation: slideInRight var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
 }
 
 .contact-form-container::before {
@@ -355,7 +344,7 @@ export default {};
   height: 12rem;
   object-fit: contain;
   filter: drop-shadow(0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5));
-  animation: floating 4s ease-in-out infinite;
+  animation: floating var(--animation-duration-floating) ease-in-out infinite;
 }
 
 /* Speech Bubble */
@@ -369,7 +358,7 @@ export default {};
   border-radius: 0;
   border: 0.125rem solid var(--primary-color);
   min-width: 8rem;
-  animation: pulse 2s infinite;
+  animation: pulse var(--animation-duration-infinite) infinite;
 }
 
 .bubble-content {
@@ -402,6 +391,7 @@ export default {};
   gap: 1rem;
   max-width: 20rem;
   margin: 0 auto;
+  animation: slideInRight var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
 }
 
 .info-item {
@@ -413,6 +403,7 @@ export default {};
   border: 0.0625rem solid rgba(245, 245, 220, 0.2);
   border-radius: 0;
   transition: all var(--transition-duration) ease;
+  animation: slideInRight var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
 }
 
 .info-item:hover {
@@ -434,9 +425,15 @@ export default {};
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInUp {
@@ -450,20 +447,22 @@ export default {};
   }
 }
 
-@keyframes slideInRight {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(2rem);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes floating {

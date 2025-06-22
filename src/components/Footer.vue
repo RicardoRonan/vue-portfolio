@@ -10,6 +10,8 @@
           <div class="links-grid">
             <router-link to="/" class="footer-link">Home</router-link>
             <router-link to="/projects" class="footer-link">Projects</router-link>
+            <router-link to="/blog" class="footer-link">Blog</router-link>
+            <router-link to="/resources" class="footer-link">Resources</router-link>
             <router-link to="/experience" class="footer-link">Experience</router-link>
             <router-link to="/testimonials" class="footer-link">Testimonials</router-link>
             <router-link to="/contact" class="footer-link">Contact</router-link>
@@ -115,7 +117,6 @@ export default {
 <style scoped>
 /* Site Footer */
 .site-footer {
-  /* background: linear-gradient(135deg, var(--background-color) 0%, #0a0a0a 100%); */
   position: relative;
   overflow: hidden;
   margin-top: 4rem;
@@ -165,6 +166,7 @@ export default {
 
 .brand-logo {
   flex-shrink: 0;
+  animation: fadeIn var(--animation-duration-subtle) ease-out both;
 }
 
 .footer-logo {
@@ -220,14 +222,14 @@ export default {
 }
 
 .footer-link {
+  color: var(--secondary-color);
+  text-decoration: none;
   font-family: var(--font-family-pixel);
   font-size: 0.8rem;
-  color: var(--text-color);
-  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
   transition: all var(--transition-duration) ease;
-  padding: 0.25rem 0;
-  border-left: 0.125rem solid transparent;
-  padding-left: 0.5rem;
+  cursor: pointer;
 }
 
 .footer-link:hover {
@@ -317,6 +319,7 @@ export default {
   text-decoration: none;
   transition: all var(--transition-duration) ease;
   backdrop-filter: blur(0.25rem);
+  animation: fadeIn var(--animation-duration-subtle) ease-out both;
 }
 
 .social-link:hover {

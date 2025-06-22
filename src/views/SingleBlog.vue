@@ -1,6 +1,6 @@
 <template>
        <div class="back-navigation">
-          <router-link to="/blog" class="back-link">
+          <router-link to="/blog" class="btn btn-tertiary btn-sm back-link">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Back to Blog</span>
           </router-link>
@@ -21,7 +21,7 @@
         </div>
         <h2 class="error-title">Oops! Something went wrong</h2>
         <p class="error-message">{{ error }}</p>
-        <button @click="retryLoad" class="btn btn-primary">
+        <button @click="retryLoad" class="btn btn-primary btn-md">
           <i class="fa-solid fa-refresh"></i> Try Again
         </button>
       </div>
@@ -55,8 +55,8 @@
             <div class="social-sharing">
               <h4 class="share-title">Share this post:</h4>
               <div class="share-buttons">
-                <button @click="shareOnTwitter" class="share-btn twitter" title="Share on Twitter">
-                  <i class="fa-brands fa-twitter"></i>
+                <button @click="shareOnTwitter" class="share-btn x" title="Share on X">
+                  <i class="fa-brands fa-x-twitter"></i>
                 </button>
                 <button @click="shareOnLinkedIn" class="share-btn linkedin" title="Share on LinkedIn">
                   <i class="fa-brands fa-linkedin"></i>
@@ -108,8 +108,8 @@
             <div v-for="post in relatedPosts" :key="post.ID" class="related-card">
               <h4 class="related-post-title" v-html="post.title"></h4>
               <p class="related-post-excerpt" v-html="post.excerpt"></p>
-              <router-link :to="`/blog/${post.ID}`" class="read-more-link">
-                Read More <i class="fa-solid fa-arrow-right"></i>
+              <router-link :to="`/blog/${getBlogSlug(post)}`" class="btn btn-secondary btn-sm read-more-link">
+                Read <i class="fa-solid fa-arrow-right"></i>
               </router-link>
             </div>
           </div>
@@ -138,16 +138,27 @@ export default {
       error.value = null;
       
       try {
-        const response = await axios.get(
-          `https://public-api.wordpress.com/rest/v1.1/sites/thedevricardo.wordpress.com/posts/${route.params.id}`
-        );
+        // Try to load by slug first, then by ID if slug fails
+        let response;
+        try {
+          response = await axios.get(
+            `https://public-api.wordpress.com/rest/v1.1/sites/thedevricardo.wordpress.com/posts/slug:${route.params.id}`
+          );
+        } catch (slugError) {
+          // If slug fails, try by ID
+          response = await axios.get(
+            `https://public-api.wordpress.com/rest/v1.1/sites/thedevricardo.wordpress.com/posts/${route.params.id}`
+          );
+        }
         
         blog.value = {
           title: response.data.title,
           content: response.data.content,
           date: response.data.date,
           tags: response.data.tags || [],
-          excerpt: response.data.excerpt
+          excerpt: response.data.excerpt,
+          slug: response.data.slug,
+          ID: response.data.ID
         };
 
         // Load related posts
@@ -165,7 +176,7 @@ export default {
         const response = await axios.get(
           'https://public-api.wordpress.com/rest/v1.1/sites/thedevricardo.wordpress.com/posts/?number=3'
         );
-        relatedPosts.value = response.data.posts.filter(post => post.ID !== route.params.id);
+        relatedPosts.value = response.data.posts.filter(post => post.ID !== blog.value?.ID);
       } catch (err) {
         console.error('Error fetching related posts:', err);
       }
@@ -213,6 +224,20 @@ export default {
       }
     };
 
+    const generateSlug = (title) => {
+      return title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .trim();
+    };
+
+    const getBlogSlug = (blog) => {
+      // Use WordPress slug if available, otherwise generate from title
+      return blog.slug || generateSlug(blog.title);
+    };
+
     onMounted(() => {
       loadBlogPost();
       sessionStorage.removeItem('newsletterModalShown');
@@ -229,7 +254,8 @@ export default {
       shareOnTwitter,
       shareOnLinkedIn,
       shareOnFacebook,
-      copyLink
+      copyLink,
+      getBlogSlug
     };
   }
 };
@@ -273,7 +299,7 @@ height: auto;
   border: 0.25rem solid var(--secondary-color);
   border-top: 0.25rem solid var(--primary-color);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin var(--animation-duration-subtle) linear infinite;
   margin-bottom: 1rem;
 }
 
@@ -327,23 +353,7 @@ height: auto;
 }
 
 .back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-family-pixel);
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: all var(--transition-duration) ease;
-  padding: 0.5rem 1rem;
-  border: 0.125rem solid var(--primary-color);
-  border-radius: 0;
-}
-
-.back-link:hover {
-  background: var(--primary-color);
-  color: var(--text-color);
-  transform: translateX(-0.25rem);
+  /* Additional styling if needed */
 }
 
 /* Blog Article */
@@ -407,13 +417,15 @@ height: auto;
   margin-bottom: 1rem;
 }
 
+/* Share Buttons */
 .share-buttons {
   display: flex;
   gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .share-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
@@ -421,20 +433,20 @@ height: auto;
   border: 0.125rem solid;
   border-radius: 0;
   background: transparent;
-  color: var(--text-color);
   font-size: 1rem;
   cursor: pointer;
   transition: all var(--transition-duration) ease;
 }
 
-.share-btn.twitter {
-  border-color: #1da1f2;
-  color: #1da1f2;
+.share-btn.x {
+  border-color: #000;
+  color: #000;
 }
 
-.share-btn.twitter:hover {
-  background: #1da1f2;
+.share-btn.x:hover {
+  background: #000;
   color: var(--text-color);
+  transform: translateY(-0.125rem);
 }
 
 .share-btn.linkedin {
@@ -445,6 +457,7 @@ height: auto;
 .share-btn.linkedin:hover {
   background: #0077b5;
   color: var(--text-color);
+  transform: translateY(-0.125rem);
 }
 
 .share-btn.facebook {
@@ -455,6 +468,7 @@ height: auto;
 .share-btn.facebook:hover {
   background: #4267b2;
   color: var(--text-color);
+  transform: translateY(-0.125rem);
 }
 
 .share-btn.copy {
@@ -465,6 +479,7 @@ height: auto;
 .share-btn.copy:hover {
   background: var(--secondary-color);
   color: var(--background-color);
+  transform: translateY(-0.125rem);
 }
 
 /* Blog Body */
@@ -754,20 +769,9 @@ text-align: left;
   margin: 0 0 1rem 0;
 }
 
+/* Read More Link */
 .read-more-link {
-  font-family: var(--font-family-pixel);
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 0.8rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  transition: all var(--transition-duration) ease;
-}
-
-.read-more-link:hover {
-  color: var(--secondary-color);
-  transform: translateX(0.25rem);
+  margin-top: 1rem;
 }
 
 /* Responsive Design */

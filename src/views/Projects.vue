@@ -1,67 +1,65 @@
 <template>
-  <section id="projects-page" class="min-vh-100">
-    <div class="container-fluid">
-      <!-- Header Section -->
-      <div class="projects-header text-center mb-5">
-        <h1 class="projects-title text-light mb-3">My Projects</h1>
-        <p class="projects-subtitle text-light mb-4">
-          Showcasing my development journey through code and creativity
-        </p>
-        <div class="header-divider"></div>
+  <div class="projects-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="hero-title">My Projects</h1>
+            <p class="hero-subtitle">
+              Showcasing my development journey through code and creativity
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Projects Grid -->
-      <div class="projects-grid">
-        <div 
-          v-for="project in projects" 
-          :key="project.id"
-          class="project-card"
-        >
-          <div class="project-content">
-            <!-- Project Image -->
-            <div class="project-image-container">
-              <img
-                :src="project.img"
-                :alt="project.title"
-                class="project-image"
-              />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a 
-                    :href="project.liveLink" 
-                    target="_blank" 
-                    class="project-link live-link"
-                    title="View Live Site"
-                  >
-                    <i class="fa-solid fa-external-link"></i>
-                    <span>Live</span>
-                  </a>
-                  <a 
-                    :href="project.githubLink" 
-                    target="_blank" 
-                    class="project-link github-link"
-                    title="View Source Code"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                    <span>Code</span>
-                  </a>
+    <!-- Projects Content -->
+    <section class="projects-content">
+      <div class="container-fluid">
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <div 
+            v-for="project in projects" 
+            :key="project.id"
+            class="project-card"
+          >
+            <div class="project-content">
+              <!-- Project Image -->
+              <div class="project-image-container">
+                <img
+                  :src="project.img"
+                  :alt="project.title"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a :href="project.liveLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm live-link">
+                      <i class="fa-solid fa-external-link-alt"></i>
+                      Live
+                    </a>
+                    <a :href="project.githubLink" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm github-link">
+                      <i class="fa-brands fa-github"></i>
+                      GitHub
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Project Info -->
-            <div class="project-info">
-              <h3 class="project-title">{{ project.title }}</h3>
-              <div class="project-tech">
-                <div class="tech-label">Built with:</div>
-                <div class="tech-stack">{{ project.language }}</div>
+              <!-- Project Info -->
+              <div class="project-info">
+                <h3 class="project-title">{{ project.title }}</h3>
+                <div class="project-tech">
+                  <div class="tech-label">Built with:</div>
+                  <div class="tech-stack">{{ project.language }}</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 <script>
 export default {
@@ -123,14 +121,15 @@ export default {
 </script>
 <style scoped>
 /* Projects Page */
-#projects-page {
+.projects-page {
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
   position: relative;
   overflow: hidden;
-  padding: 4rem 0;
-  animation: fadeIn 1s ease-in-out;
 }
 
-#projects-page::before {
+.projects-page::before {
   content: '';
   position: absolute;
   top: 0;
@@ -141,47 +140,37 @@ export default {
   pointer-events: none;
 }
 
-/* Header Section */
-.projects-header {
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0 2rem 0;
+  background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(245, 245, 220, 0.1));
+  border-bottom: 0.125rem solid var(--primary-color);
   position: relative;
   z-index: 2;
-  animation: slideInUp 1s ease-out 0.3s both;
 }
 
-.projects-title {
+.hero-title {
+  font-family: var(--font-family-pixel);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-family: var(--font-family-pixel);
-  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
-  color: var(--secondary-color);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.projects-subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-family: var(--font-family-pixel);
   color: var(--primary-color);
   text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
-  opacity: 0.9;
+  margin-bottom: 1rem;
+  animation: slideInDown var(--animation-duration-subtle) ease-out;
 }
 
-.header-divider {
-  width: 6rem;
-  height: 0.25rem;
-  background: linear-gradient(90deg, var(--primary-color), #ff6b9d);
-  margin: 2rem auto;
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--secondary-color);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
+}
+
+/* Projects Content */
+.projects-content {
+  padding: 3rem 0;
   position: relative;
-}
-
-.header-divider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+  z-index: 2;
 }
 
 /* Projects Grid */
@@ -190,9 +179,8 @@ export default {
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem 1rem;
-  position: relative;
-  z-index: 2;
   justify-content: center;
+  animation: slideInUp var(--animation-duration-subtle) ease-out both;
 }
 
 /* Project Card */
@@ -204,23 +192,24 @@ export default {
   transition: all var(--transition-duration) ease;
   backdrop-filter: blur(0.5rem);
   position: relative;
-  animation: slideInUp 0.8s ease-out both;
+  animation: slideInUp var(--animation-duration-subtle) ease-out both;
   flex: 1 1 20rem;
   max-width: 30rem;
   min-width: 20rem;
 }
 
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-.project-card:nth-child(6) { animation-delay: 0.6s; }
+.project-card:nth-child(1) { animation-delay: var(--animation-delay-small); }
+.project-card:nth-child(2) { animation-delay: var(--animation-delay-medium); }
+.project-card:nth-child(3) { animation-delay: var(--animation-delay-medium); }
+.project-card:nth-child(4) { animation-delay: var(--animation-delay-large); }
+.project-card:nth-child(5) { animation-delay: var(--animation-delay-large); }
+.project-card:nth-child(6) { animation-delay: var(--animation-delay-larger); }
 
 .project-card:hover {
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem) scale(1.02);
   box-shadow: 0 1rem 2rem rgba(220, 20, 60, 0.3);
   border-color: var(--secondary-color);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .project-card::before {
@@ -252,12 +241,13 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-duration) ease;
+  transition: transform var(--animation-duration-subtle) ease, filter var(--animation-duration-subtle) ease;
   filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.5));
 }
 
 .project-card:hover .project-image {
   transform: scale(1.05);
+  filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.7));
 }
 
 /* Project Overlay */
@@ -272,17 +262,27 @@ export default {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity var(--transition-duration) ease;
+  transition: opacity var(--animation-duration-subtle) ease, transform var(--animation-duration-subtle) ease;
   z-index: 2;
 }
 
 .project-card:hover .project-overlay {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .project-links {
   display: flex;
   gap: 1rem;
+  transition: opacity var(--animation-duration-subtle) ease;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity var(--animation-duration-subtle) ease, transform var(--animation-duration-subtle) ease;
+}
+
+.project-card:hover .project-links {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-link {
@@ -297,6 +297,24 @@ export default {
   transition: all var(--transition-duration) ease;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(0.25rem);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--animation-duration-subtle) ease;
+}
+
+.project-link:hover::before {
+  left: 100%;
 }
 
 .project-link i {
@@ -319,7 +337,7 @@ export default {
   background: var(--secondary-color);
   color: var(--background-color);
   transform: translateY(-0.25rem);
-  box-shadow: 0 0.5rem 1rem rgba(245, 245, 220, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(245, 245, 220, 0.3), 0 0 1rem rgba(245, 245, 220, 0.5);
 }
 
 .github-link {
@@ -331,7 +349,7 @@ export default {
   background: var(--text-color);
   color: var(--background-color);
   transform: translateY(-0.25rem);
-  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.3), 0 0 1rem rgba(255, 255, 255, 0.5);
 }
 
 /* Project Info */
@@ -373,9 +391,15 @@ export default {
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInUp {
@@ -389,9 +413,22 @@ export default {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* Responsive Design */
@@ -491,8 +528,20 @@ export default {
     animation: none;
   }
   
+  .project-card:hover {
+    transform: none;
+  }
+  
   .project-image {
     transform: none !important;
+  }
+  
+  .project-overlay {
+    transition: opacity 0.01ms ease !important;
+  }
+  
+  .project-links {
+    transition: opacity 0.01ms ease !important;
   }
 }
 

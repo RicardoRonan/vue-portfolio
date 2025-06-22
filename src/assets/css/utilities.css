@@ -1,13 +1,23 @@
 /* CSS Utilities - Best Practices Implementation */
 
 :root {
-  /* Existing color palette (keep these as is) */
-  /* Add new retro-futurism variables */
+  /* Retro-futurism variables */
   --neon-glow: 0 0 8px var(--primary-color), 0 0 16px var(--secondary-color);
   --pixel-border: 4px solid var(--primary-color);
   --retro-bg: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 20px), repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 20px);
   --scanline-bg: repeating-linear-gradient(180deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 4px);
   --font-family-pixel: 'Press Start 2P', 'VT323', 'Share Tech Mono', monospace;
+  
+  /* Button System */
+  --btn-padding-sm: 0.5rem 1rem;
+  --btn-padding-md: 0.75rem 1.5rem;
+  --btn-padding-lg: 1rem 2rem;
+  --btn-font-size-sm: 0.7rem;
+  --btn-font-size-md: 0.8rem;
+  --btn-font-size-lg: 0.9rem;
+  --btn-border-width: 0.125rem;
+  --btn-border-radius: 0;
+  --btn-transition: all var(--transition-duration) ease;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&display=swap');
@@ -128,45 +138,189 @@
 
 /* Button components */
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
   font-family: var(--font-family-pixel);
-  font-size: 1rem;
-  line-height: 1.5;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  border-radius: var(--btn-border-radius);
+  border-width: var(--btn-border-width);
+  transition: var(--btn-transition);
   cursor: pointer;
-  border: var(--pixel-border);
-  border-radius: 0;
-  transition: all var(--transition-duration) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: normal;
+  line-height: 1.2;
+  white-space: nowrap;
   user-select: none;
-  box-shadow: var(--neon-glow);
-  background: var(--scanline-bg);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Button Sizes */
+.btn-sm {
+  padding: var(--btn-padding-sm);
+  font-size: var(--btn-font-size-sm);
+}
+
+.btn-md {
+  padding: var(--btn-padding-md);
+  font-size: var(--btn-font-size-md);
+}
+
+.btn-lg {
+  padding: var(--btn-padding-lg);
+  font-size: var(--btn-font-size-lg);
+}
+
+/* Primary Button */
 .btn-primary {
-  color: var(--text-color);
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   border-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .btn-primary:hover {
-  background-color: transparent;
+  background: transparent;
   color: var(--primary-color);
-  border-color: var(--primary-color);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(220, 20, 60, 0.3);
 }
 
+.btn-primary:focus {
+  outline: 0.125rem solid var(--primary-color);
+  outline-offset: 0.25rem;
+}
+
+/* Secondary Button */
 .btn-secondary {
-  color: var(--background-color);
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
+  background: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .btn-secondary:hover {
-  background-color: transparent;
-  color: var(--secondary-color);
-  border-color: var(--secondary-color);
+  background: var(--primary-color);
+  color: var(--text-color);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(220, 20, 60, 0.3);
+}
+
+.btn-secondary:focus {
+  outline: 0.125rem solid var(--primary-color);
+  outline-offset: 0.25rem;
+}
+
+/* Tertiary Button */
+.btn-tertiary {
+  background: transparent;
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.btn-tertiary:hover {
+  background: var(--text-color);
+  color: var(--background-color);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(255, 255, 255, 0.3);
+}
+
+.btn-tertiary:focus {
+  outline: 0.125rem solid var(--text-color);
+  outline-offset: 0.25rem;
+}
+
+/* Button States */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Button with Icon */
+.btn-icon {
+  padding: 0.75rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Button Groups */
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-group .btn {
+  border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+  border-top-left-radius: var(--btn-border-radius);
+  border-bottom-left-radius: var(--btn-border-radius);
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: var(--btn-border-radius);
+  border-bottom-right-radius: var(--btn-border-radius);
+}
+
+/* Responsive Buttons */
+@media (max-width: 768px) {
+  .btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.65rem;
+  }
+  
+  .btn-md {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+  
+  .btn-lg {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-sm {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.6rem;
+  }
+  
+  .btn-md {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+  
+  .btn-lg {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.8rem;
+  }
+  
+  .btn-icon {
+    padding: 0.6rem;
+    min-width: 2.2rem;
+    height: 2.2rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
 }
 
 /* Card components */
@@ -198,15 +352,15 @@
 
 /* Animation utilities */
 .fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn var(--animation-duration-subtle) ease-in-out;
 }
 
 .slide-up {
-  animation: slideUp 0.5s ease-out;
+  animation: slideUp var(--animation-duration-subtle) ease-out;
 }
 
 .bounce {
-  animation: bounce 2s infinite;
+  animation: bounce var(--animation-duration-infinite) infinite;
 }
 
 @keyframes fadeIn {
@@ -217,7 +371,7 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(2rem);
+    transform: translateY(1rem);
   }
   to {
     opacity: 1;

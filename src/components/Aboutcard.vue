@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <!-- About Header -->
       <div class="about-header text-center">
-        <h1 class="about-title text-light mb-3">About Me</h1>
+        <h1 class="about-title text-light mb-3">A little About Me</h1>
         <div class="header-divider"></div>
       </div>
 
@@ -44,24 +44,30 @@
               <!-- Main Description -->
               <div class="about-description">
                 <p class="about-text">
-                  Dedicated <span class="highlight">Full-Stack Developer</span> with hands-on experience in 
-                  <span class="highlight">fintech systems</span>, <span class="highlight">automation</span>, 
-                  and scalable web applications.
+                  Creative <span class="highlight">Full-Stack Developer</span> with a passion for 
+                  <span class="highlight">visual design</span>, <span class="highlight">illustration</span>, 
+                  and bringing ideas to life through code and creativity.
                 </p>
                 <p class="about-text">
-                  I have a proven track record of building secure payment integrations, automating business 
-                  workflows using <span class="highlight">n8n</span>, and collaborating on full lifecycle 
-                  development projects.
+                  When I'm not coding, you'll find me sketching pixel art, creating digital illustrations, 
+                  and exploring graphic design. I believe the best digital experiences come from the 
+                  perfect blend of technical skill and artistic vision.
                 </p>
                 <p class="about-text">
-                  Passionate about <span class="highlight">digital financial transformation</span> and 
-                  continuous learning in emerging technologies.
+                  With hands-on experience in <span class="highlight">fintech systems</span>, 
+                  <span class="highlight">automation</span>, and scalable web applications, I bring 
+                  both creative flair and technical precision to every project.
+                </p>
+                <p class="about-text">
+                  Passionate about <span class="highlight">digital transformation</span>, 
+                  <span class="highlight">user experience design</span>, and creating solutions that 
+                  are both beautiful and functional.
                 </p>
               </div>
 
               <!-- Skills Grid -->
               <div class="skills-preview">
-                <h3 class="skills-title">Core Technologies</h3>
+                <h3 class="skills-title">Core Skills</h3>
                 <div class="skills-grid">
                   <div class="skill-item">
                     <i class="fa-brands fa-js skill-icon"></i>
@@ -72,12 +78,12 @@
                     <span class="skill-name">Vue.js</span>
                   </div>
                   <div class="skill-item">
-                    <i class="fa-brands fa-microsoft skill-icon"></i>
-                    <span class="skill-name">C# .NET</span>
+                    <i class="fa-solid fa-palette skill-icon"></i>
+                    <span class="skill-name">Design</span>
                   </div>
                   <div class="skill-item">
-                    <i class="fa-solid fa-database skill-icon"></i>
-                    <span class="skill-name">SQL</span>
+                    <i class="fa-solid fa-draw-polygon skill-icon"></i>
+                    <span class="skill-name">Illustration</span>
                   </div>
                   <div class="skill-item">
                     <i class="fa-solid fa-cogs skill-icon"></i>
@@ -111,10 +117,17 @@
         <h3 class="fun-facts-title">Fun Facts About Me</h3>
         <div class="fun-facts-grid">
           <div class="fun-fact-item">
+            <i class="fa-solid fa-palette"></i>
+            <div class="fact-content">
+              <h4>Creative Designer</h4>
+              <p>Love creating pixel art, digital illustrations, and graphic designs</p>
+            </div>
+          </div>
+          <div class="fun-fact-item">
             <i class="fa-solid fa-gamepad"></i>
             <div class="fact-content">
               <h4>Pixel Art Enthusiast</h4>
-              <p>Love creating retro-style designs and pixel art</p>
+              <p>Passionate about retro-style designs and 8-bit aesthetics</p>
             </div>
           </div>
           <div class="fun-fact-item">
@@ -122,13 +135,6 @@
             <div class="fact-content">
               <h4>Automation Geek</h4>
               <p>Always looking for ways to automate repetitive tasks</p>
-            </div>
-          </div>
-          <div class="fun-fact-item">
-            <i class="fa-solid fa-mountain"></i>
-            <div class="fact-content">
-              <h4>Cape Town Native</h4>
-              <p>Born and raised in the beautiful Mother City</p>
             </div>
           </div>
           <div class="fun-fact-item">
@@ -152,7 +158,7 @@ export default {};
   position: relative;
   overflow: hidden;
   padding: 4rem 0;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn var(--animation-duration-subtle) ease-in-out;
 }
 
 .about-section::before {
@@ -170,7 +176,7 @@ export default {};
 .about-header {
   position: relative;
   z-index: 2;
-  animation: slideInUp 1s ease-out 0.3s both;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
 }
 
 .about-title {
@@ -198,7 +204,7 @@ export default {};
   right: 0;
   bottom: 0;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+  animation: shimmer var(--animation-duration-infinite) infinite;
 }
 
 /* About Content */
@@ -206,14 +212,14 @@ export default {};
   position: relative;
   z-index: 2;
   padding: 2rem 1rem;
-  animation: slideInUp 1s ease-out 0.5s both;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-medium) both;
 }
 
 /* Character Container */
 .character-container {
   position: relative;
   text-align: center;
-  animation: slideInLeft 1s ease-out 0.7s both;
+  animation: slideInLeft var(--animation-duration-subtle) ease-out var(--animation-delay-medium) both;
 }
 
 .character-frame {
@@ -226,7 +232,6 @@ export default {};
   width: clamp(12rem, 25vw, 18rem);
   height: auto;
   filter: drop-shadow(0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5));
-  animation: floating 4s ease-in-out infinite;
   transition: transform var(--transition-duration) ease;
 }
 
@@ -277,7 +282,7 @@ export default {};
 
 /* About Text Container */
 .about-text-container {
-  animation: slideInRight 1s ease-out 0.7s both;
+  animation: slideInRight var(--animation-duration-subtle) ease-out var(--animation-delay-medium) both;
 }
 
 .about-description {
@@ -324,6 +329,7 @@ export default {};
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-large) both;
 }
 
 .skill-item {
@@ -339,6 +345,7 @@ export default {};
   flex: 1 1 8rem;
   max-width: 10rem;
   min-width: 8rem;
+  animation: shimmer var(--animation-duration-infinite) infinite;
 }
 
 .skill-item:hover {
@@ -425,7 +432,7 @@ export default {};
   position: relative;
   z-index: 2;
   padding: 3rem 1rem 0;
-  animation: slideInUp 1s ease-out 0.9s both;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-medium) both;
 }
 
 .fun-facts-title {

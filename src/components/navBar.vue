@@ -67,6 +67,16 @@
         <router-link 
           class="nav-item pixel-border neon-glow retro-bg scanline-bg" 
           @click="toggleNav()" 
+          to="/resources"
+          active-class="active"
+        >
+          <i class="fa-solid fa-tools nav-icon"></i>
+          <span class="nav-text">Resources</span>
+        </router-link>
+
+        <router-link 
+          class="nav-item pixel-border neon-glow retro-bg scanline-bg" 
+          @click="toggleNav()" 
           to="/testimonials"
           active-class="active"
         >
@@ -279,7 +289,7 @@ align-items: center;
 /* Logo Section */
 .nav-logo {
   margin-bottom: 3rem;
-  animation: slideInUp 0.8s ease-out 0.2s both;
+  animation: slideInUp var(--animation-duration-subtle) ease-out var(--animation-delay-small) both;
 }
 
 .logo-link {
@@ -322,6 +332,7 @@ align-items: center;
   flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 3rem;
+  animation: slideInUp var(--animation-duration-subtle) ease-out both;
 }
 
 .nav-item {
@@ -339,15 +350,15 @@ align-items: center;
   transition: all var(--transition-duration) ease;
   min-width: 12rem;
   backdrop-filter: blur(0.25rem);
-  animation: slideInLeft 0.8s ease-out both;
+  animation: slideInLeft var(--animation-duration-subtle) ease-out both;
 }
 
-.nav-item:nth-child(1) { animation-delay: 0.3s; }
-.nav-item:nth-child(2) { animation-delay: 0.4s; }
-.nav-item:nth-child(3) { animation-delay: 0.5s; }
-.nav-item:nth-child(4) { animation-delay: 0.6s; }
-.nav-item:nth-child(5) { animation-delay: 0.7s; }
-.nav-item:nth-child(6) { animation-delay: 0.8s; }
+.nav-item:nth-child(1) { animation-delay: var(--animation-delay-medium); }
+.nav-item:nth-child(2) { animation-delay: var(--animation-delay-large); }
+.nav-item:nth-child(3) { animation-delay: var(--animation-delay-large); }
+.nav-item:nth-child(4) { animation-delay: var(--animation-delay-larger); }
+.nav-item:nth-child(5) { animation-delay: var(--animation-delay-larger); }
+.nav-item:nth-child(6) { animation-delay: var(--animation-delay-largest); }
 
 .nav-item:hover {
   background: rgba(220, 20, 60, 0.2);
@@ -378,7 +389,7 @@ align-items: center;
 .nav-social {
   display: flex;
   gap: 1.5rem;
-  animation: slideInUp 0.8s ease-out 0.9s both;
+  animation: slideInUp var(--animation-duration-subtle) ease-out 0.9s both;
 }
 
 .social-link {
@@ -540,5 +551,19 @@ align-items: center;
     border-color: #ffffff;
     background: #000000;
   }
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: var(--font-family-pixel);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  transition: all var(--transition-duration) ease;
+  padding: 0.5rem 1rem;
+  border: 0.125rem solid transparent;
+  border-radius: 0;
+  cursor: pointer;
 }
 </style>
