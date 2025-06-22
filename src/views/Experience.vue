@@ -524,11 +524,12 @@ export default {
 }
 
 .achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   max-width: 60rem;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .achievement-item {
@@ -541,6 +542,9 @@ export default {
   border-radius: 0;
   backdrop-filter: blur(0.5rem);
   transition: all var(--transition-duration) ease;
+  flex: 1 1 15rem;
+  max-width: 20rem;
+  min-width: 15rem;
 }
 
 .achievement-item:hover {
@@ -659,11 +663,14 @@ export default {
   }
   
   .achievements-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
   
   .achievement-item {
     padding: 1rem;
+    max-width: 100%;
+    min-width: auto;
   }
   
   .achievement-item i {

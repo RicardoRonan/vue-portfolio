@@ -43,14 +43,6 @@
           <span class="nav-text">Home</span>
         </router-link>
 
-        <a 
-          class="nav-item pixel-border neon-glow retro-bg scanline-bg" 
-          @click="scrollToAbout()" 
-          href="#About"
-        >
-          <i class="fa-solid fa-user nav-icon"></i>
-          <span class="nav-text">About</span>
-        </a>
 
         <router-link 
           class="nav-item pixel-border neon-glow retro-bg scanline-bg" 

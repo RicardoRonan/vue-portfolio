@@ -249,14 +249,16 @@ export default {};
 }
 
 .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .form-group {
   margin-bottom: 1.5rem;
+  flex: 1 1 calc(50% - 0.5rem);
+  min-width: 15rem;
 }
 
 .form-label {
@@ -493,8 +495,13 @@ export default {};
   }
   
   .form-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 0;
+  }
+  
+  .form-group {
+    flex: 1 1 100%;
+    min-width: auto;
   }
   
   .form-title {

@@ -3,14 +3,6 @@
     <div class="footer-content">
       <!-- Footer Top Section -->
       <div class="footer-top">
-        <div class="footer-brand">
-          <div class="brand-logo">
-          </div>
-          <div class="brand-info">
-            <h3 class="brand-name">Ricardo Moses</h3>
-            <p class="brand-tagline">Full-Stack Developer & Automation Specialist</p>
-          </div>
-        </div>
 
         <!-- Quick Links -->
         <div class="footer-links">
@@ -30,7 +22,7 @@
           <div class="contact-info">
             <div class="contact-item">
               <i class="fa-solid fa-envelope"></i>
-              <span>ricardoronan@gmail.com.com</span>
+              <span>ricardoronan@gmail.com</span>
             </div>
             <div class="contact-item">
               <i class="fa-solid fa-location-dot"></i>
@@ -86,9 +78,7 @@
               <i class="fa-regular fa-copyright"></i>
               {{ currentYear }} Ricardo Moses. All rights reserved.
             </p>
-            <p class="made-with">
-              Made with <i class="fa-solid fa-heart"></i> using Vue.js
-            </p>
+  
           </div>
 
           <!-- Back to Top -->
@@ -146,22 +136,31 @@ export default {
   position: relative;
   z-index: 2;
   margin: 0 auto;
-  padding: 3rem 2rem 1rem;
+  padding: 0rem 2rem 0rem;
 }
 
 /* Footer Top */
 .footer-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   margin-bottom: 3rem;
+  justify-content: center;
 }
 
-/* Footer Brand */
 .footer-brand {
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 20rem;
+}
+
+.footer-links {
+  min-width: 15rem;
+}
+
+.footer-contact {
+  min-width: 20rem;
 }
 
 .brand-logo {
@@ -289,17 +288,19 @@ export default {
 }
 
 .footer-bottom-content {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
+  justify-content: space-between;
 }
 
 /* Social Links */
 .social-links {
   display: flex;
   gap: 1rem;
-  justify-self: start;
+  flex: 1 1 auto;
+  justify-content: flex-start;
 }
 
 .social-link {
@@ -328,7 +329,7 @@ export default {
 /* Copyright */
 .copyright {
   text-align: center;
-  justify-self: center;
+  flex: 1 1 auto;
 }
 
 .copyright-text {
@@ -358,7 +359,9 @@ export default {
 
 /* Back to Top */
 .back-to-top {
-  justify-self: end;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .scroll-top-btn {
@@ -397,33 +400,40 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .footer-content {
-    padding: 2rem 1rem 1rem;
-  }
   
   .footer-top {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
     text-align: center;
+    align-items: center;
   }
   
   .footer-brand {
     flex-direction: column;
     text-align: center;
+    min-width: auto;
+  }
+  
+  .footer-links {
+    min-width: auto;
+  }
+  
+  .footer-contact {
+    min-width: auto;
   }
   
   .footer-bottom-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.5rem;
     text-align: center;
   }
   
   .social-links {
-    justify-self: center;
+    justify-content: center;
   }
   
   .back-to-top {
-    justify-self: center;
+    justify-content: center;
   }
   
   .links-grid {
@@ -436,10 +446,6 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .footer-content {
-    padding: 1.5rem 0.75rem 1rem;
-  }
-  
   .footer-top {
     gap: 1.5rem;
   }

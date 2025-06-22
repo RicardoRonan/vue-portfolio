@@ -241,12 +241,13 @@ export default {
 
 /* Testimonials Grid */
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem 1rem;
   position: relative;
   z-index: 2;
+  justify-content: center;
 }
 
 /* Testimonial Card */
@@ -260,6 +261,9 @@ export default {
   position: relative;
   overflow: hidden;
   animation: slideInUp 0.8s ease-out both;
+  flex: 1 1 22rem;
+  max-width: 30rem;
+  min-width: 22rem;
 }
 
 .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
@@ -549,13 +553,16 @@ export default {
 /* Responsive Design */
 @media (max-width: 768px) {
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.5rem;
     padding: 1rem;
+    align-items: center;
   }
   
   .testimonial-card {
     padding: 1.5rem;
+    max-width: 100%;
+    min-width: auto;
   }
   
   .testimonials-title {

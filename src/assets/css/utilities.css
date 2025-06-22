@@ -69,7 +69,6 @@
 .d-inline { display: inline; }
 .d-inline-block { display: inline-block; }
 .d-flex { display: flex; }
-.d-grid { display: grid; }
 
 /* Flexbox utilities */
 .flex-row { flex-direction: row; }

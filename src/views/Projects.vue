@@ -186,12 +186,13 @@ export default {
 
 /* Projects Grid */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem 1rem;
   position: relative;
   z-index: 2;
+  justify-content: center;
 }
 
 /* Project Card */
@@ -204,6 +205,9 @@ export default {
   backdrop-filter: blur(0.5rem);
   position: relative;
   animation: slideInUp 0.8s ease-out both;
+  flex: 1 1 20rem;
+  max-width: 30rem;
+  min-width: 20rem;
 }
 
 .project-card:nth-child(1) { animation-delay: 0.1s; }
@@ -393,13 +397,15 @@ export default {
 /* Responsive Design */
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.5rem;
     padding: 1rem;
+    align-items: center;
   }
   
   .project-card {
     max-width: 100%;
+    min-width: auto;
   }
   
   .projects-title {

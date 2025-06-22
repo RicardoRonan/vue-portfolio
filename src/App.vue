@@ -53,7 +53,13 @@ export default {
   background-color: var(--background-color);
   user-select: none;
   line-height: 1.6; 
-  padding: 2rem;;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  #app {
+    padding: 0.5rem;
+  }
 }
 
 /* Utility classes for consistent spacing */

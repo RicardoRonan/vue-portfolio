@@ -219,10 +219,11 @@ export default {
 }
 
 .blog-list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 .blog-card {
   background: rgba(255,255,255,0.02);
@@ -235,6 +236,9 @@ export default {
   justify-content: space-between;
   transition: box-shadow 0.2s, transform 0.2s;
   outline: none;
+  flex: 1 1 18rem;
+  max-width: 25rem;
+  min-width: 18rem;
 }
 .blog-card:focus,
 .blog-card:hover {
@@ -313,10 +317,17 @@ export default {
     font-size: 2rem;
   }
   .blog-list-grid {
+    flex-direction: column;
     gap: 1.25rem;
+    align-items: center;
   }
   .blog-card {
     padding: 1.25rem 1rem 1rem 1rem;
+    max-width: 100%;
+    min-width: auto;
+  }
+  .meta-item {
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 576px) {
@@ -330,7 +341,8 @@ export default {
     padding: 0 0.5rem;
   }
   .blog-list-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>

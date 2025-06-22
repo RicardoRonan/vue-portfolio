@@ -1,6 +1,13 @@
 <template>
+       <div class="back-navigation">
+          <router-link to="/blog" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Blog</span>
+          </router-link>
+        </div>
   <section id="single-blog-page" class="blog-page">
     <div class="container">
+ 
       <!-- Loading State -->
       <div v-if="loading" class="loading-container">
         <div class="loading-spinner"></div>
@@ -18,16 +25,11 @@
           <i class="fa-solid fa-refresh"></i> Try Again
         </button>
       </div>
-
+    
       <!-- Blog Content -->
       <div v-else-if="blog" class="blog-content-wrapper">
         <!-- Back Navigation -->
-        <div class="back-navigation">
-          <router-link to="/blog" class="back-link">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Back to Blog</span>
-          </router-link>
-        </div>
+     
 
         <!-- Blog Header -->
         <article class="blog-article">
@@ -213,6 +215,7 @@ export default {
 
     onMounted(() => {
       loadBlogPost();
+      sessionStorage.removeItem('newsletterModalShown');
     });
 
     return {
@@ -243,9 +246,11 @@ export default {
 }
 
 .container {
-  max-width: 50rem;
+  max-width: 65ch;
+  line-height: 1.5;
   margin: 0 auto;
   padding: 0 1rem;
+  
 }
 
 /* Loading State */
@@ -318,6 +323,7 @@ height: auto;
 /* Back Navigation */
 .back-navigation {
   margin-bottom: 2rem;
+  display: flex;
 }
 
 .back-link {
@@ -464,6 +470,10 @@ height: auto;
 /* Blog Body */
 .blog-body {
   margin-bottom: 2rem;
+  display: flex;
+justify-content: center;
+align-items: center;
+text-align: left;
 }
 
 .content-wrapper {
@@ -471,6 +481,26 @@ height: auto;
   color: var(--text-color);
   line-height: 1.8;
   font-size: 1rem;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.content-wrapper :deep(p) {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.content-wrapper :deep(ul),
+.content-wrapper :deep(ol) {
+  margin: 1.5rem 0 1.5rem 2rem;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.content-wrapper :deep(li) {
+  margin-bottom: 0.7rem;
+  line-height: 1.7;
 }
 
 .content-wrapper :deep(h1),
@@ -479,17 +509,17 @@ height: auto;
 .content-wrapper :deep(h4),
 .content-wrapper :deep(h5),
 .content-wrapper :deep(h6) {
-  color: var(--secondary-color);
-  margin: 2rem 0 1rem 0;
-  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
+  margin: 2.5rem 0 1.2rem 0;
+  line-height: 1.3;
 }
 
-.content-wrapper :deep(h1) { font-size: 1.75rem; }
-.content-wrapper :deep(h2) { font-size: 1.5rem; }
-.content-wrapper :deep(h3) { font-size: 1.25rem; }
-
-.content-wrapper :deep(p) {
-  margin-bottom: 1.5rem;
+.content-wrapper :deep(blockquote) {
+  border-left: 0.25rem solid var(--primary-color);
+  padding-left: 1.2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--secondary-color);
+  background: rgba(220, 20, 60, 0.05);
 }
 
 .content-wrapper :deep(a) {
@@ -502,14 +532,6 @@ height: auto;
 .content-wrapper :deep(a:hover) {
   color: var(--secondary-color);
   border-bottom-color: var(--secondary-color);
-}
-
-.content-wrapper :deep(blockquote) {
-  border-left: 0.25rem solid var(--primary-color);
-  padding-left: 1rem;
-  margin: 2rem 0;
-  font-style: italic;
-  color: var(--secondary-color);
 }
 
 .content-wrapper :deep(code) {
@@ -529,14 +551,75 @@ height: auto;
   border: 0.0625rem solid var(--primary-color);
 }
 
-.content-wrapper :deep(ul),
-.content-wrapper :deep(ol) {
-  margin: 1.5rem 0;
-  padding-left: 2rem;
+.content-wrapper :deep(img) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 
-.content-wrapper :deep(li) {
-  margin-bottom: 0.5rem;
+.content-wrapper :deep(.wp-image-12),
+.content-wrapper :deep(.wp-image-13),
+.content-wrapper :deep(.wp-image-14),
+.content-wrapper :deep(.wp-image-15),
+.content-wrapper :deep(.wp-image-16),
+.content-wrapper :deep(.wp-image-17),
+.content-wrapper :deep(.wp-image-18),
+.content-wrapper :deep(.wp-image-19),
+.content-wrapper :deep(.wp-image-20) {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+/* WordPress alignment classes */
+.content-wrapper :deep(.alignleft) {
+  float: left;
+  margin: 0 1.5rem 1.5rem 0;
+  max-width: 50%;
+}
+
+.content-wrapper :deep(.alignright) {
+  float: right;
+  margin: 0 0 1.5rem 1.5rem;
+  max-width: 50%;
+}
+
+.content-wrapper :deep(.aligncenter) {
+  display: block;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+/* Responsive image handling */
+@media (max-width: 768px) {
+  .content-wrapper :deep(.alignleft),
+  .content-wrapper :deep(.alignright) {
+    float: none;
+    margin: 1.5rem auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .content-wrapper {
+    padding: 1rem 0.5rem;
+    font-size: 0.97rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-wrapper {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.93rem;
+  }
 }
 
 /* Blog Footer */
@@ -632,9 +715,10 @@ height: auto;
 }
 
 .related-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .related-card {
@@ -643,6 +727,9 @@ height: auto;
   border-radius: 0;
   padding: 1.5rem;
   transition: all var(--transition-duration) ease;
+  flex: 1 1 15rem;
+  max-width: 20rem;
+  min-width: 15rem;
 }
 
 .related-card:hover {
@@ -712,7 +799,13 @@ height: auto;
   }
   
   .related-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .related-card {
+    max-width: 100%;
+    min-width: auto;
   }
 }
 
@@ -749,64 +842,6 @@ height: auto;
   .related-card:hover,
   .read-more-link:hover {
     transform: none;
-  }
-}
-
-/* Blog Content Images */
-.content-wrapper :deep(img) {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1.5rem auto;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
-}
-
-.content-wrapper :deep(.wp-image-12),
-.content-wrapper :deep(.wp-image-13),
-.content-wrapper :deep(.wp-image-14),
-.content-wrapper :deep(.wp-image-15),
-.content-wrapper :deep(.wp-image-16),
-.content-wrapper :deep(.wp-image-17),
-.content-wrapper :deep(.wp-image-18),
-.content-wrapper :deep(.wp-image-19),
-.content-wrapper :deep(.wp-image-20) {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 1.5rem auto;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
-}
-
-/* WordPress alignment classes */
-.content-wrapper :deep(.alignleft) {
-  float: left;
-  margin: 0 1.5rem 1.5rem 0;
-  max-width: 50%;
-}
-
-.content-wrapper :deep(.alignright) {
-  float: right;
-  margin: 0 0 1.5rem 1.5rem;
-  max-width: 50%;
-}
-
-.content-wrapper :deep(.aligncenter) {
-  display: block;
-  margin: 1.5rem auto;
-  text-align: center;
-}
-
-/* Responsive image handling */
-@media (max-width: 768px) {
-  .content-wrapper :deep(.alignleft),
-  .content-wrapper :deep(.alignright) {
-    float: none;
-    margin: 1.5rem auto;
-    max-width: 100%;
   }
 }
 </style>

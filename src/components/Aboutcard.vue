@@ -320,9 +320,10 @@ export default {};
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
 
 .skill-item {
@@ -335,6 +336,9 @@ export default {};
   border: 0.0625rem solid var(--secondary-color);
   border-radius: 0;
   transition: all var(--transition-duration) ease;
+  flex: 1 1 8rem;
+  max-width: 10rem;
+  min-width: 8rem;
 }
 
 .skill-item:hover {
@@ -436,9 +440,10 @@ export default {};
 }
 
 .fun-facts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .fun-fact-item {
@@ -451,6 +456,9 @@ export default {};
   border-radius: 0;
   backdrop-filter: blur(0.5rem);
   transition: all var(--transition-duration) ease;
+  flex: 1 1 15rem;
+  max-width: 25rem;
+  min-width: 15rem;
 }
 
 .fun-fact-item:hover {
@@ -548,11 +556,14 @@ export default {};
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    flex-direction: column;
+    align-items: center;
   }
   
   .skill-item {
     padding: 0.75rem;
+    max-width: 100%;
+    min-width: auto;
   }
   
   .skill-icon {
@@ -573,11 +584,14 @@ export default {};
   }
   
   .fun-facts-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
   
   .fun-fact-item {
     padding: 1rem;
+    max-width: 100%;
+    min-width: auto;
   }
   
   .fun-fact-item i {
